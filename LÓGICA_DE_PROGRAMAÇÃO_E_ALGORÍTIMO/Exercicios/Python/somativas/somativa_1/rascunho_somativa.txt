@@ -1,0 +1,205 @@
+A prova será realizada apenas no dia da aula de Lógica de Programação e Algoritmos.
+Temos 5 versões diferentes da prova, então nada de tentar copiar, hein? Qualquer tentativa de cola resultará em nota zero instantânea, mas não se preocupem, vocês terão a chance de recuperação no final do semestre, abrangendo todo o conteúdo.
+O aluno deve escrever um algoritmo (passo a passo) do código de cada pergunta dissertativa e colar no forms da prova (cada pergunta seu algoritmo específico)
+Para as questões dissertativas, vocês deverão criar uma pasta com o seu nome, e dentro dela, salvar cada resposta em um arquivo separado, nomeado com o número da questão (ex: "1.py", "2.py", etc.). A não observância desta regra resultará em perda de pontos. Ao final, zipar a pasta e subir nesta atividade.
+Consulta do Material fornecido pelo professor, além dos exercícios feitos em aula. 
+Esquema de peso das questões:
+Alternativas: 5 pontos cada
+Dissertativas: 12 pontos cada (a última questão vale 13)
+Total: 100 pontos  
+
+
+
+questão 10)
+
+1 - entrada de dados (pedir o número inteiro) usando int
+2 - utilizar o % para verificar se é divisível por 3 e por 5
+3 - se restar 0 é divisivel  --> printar mensagem de que é divisível por ambos
+4 - senão, não é divisível --> printar mensagem de que não é divisível
+Obs: O número precisa ser divisível por 3 E por 5
+
+#-*- coding: UTF-8 -*-
+
+print("Olá! Me dê um valor inteiro e te direi se ele é divisível por 3 e por 5!")
+valor = int(input("Insira o valor: "))
+if valor%3 == 0 and valor%5 == 0:
+    print("Esse valor é divisível por 3 e por 5!")
+else:
+    print("Esse valor não é divisível por 3 e 5...")
+
+===================================================================================
+questão 5) 
+
+1 - Dentro de um for, pedir o preço de 5 pratos e somar todos eles
+2 - Se (if) o preço resultante for maior doque 200 reais, aplicar desconto de 5%
+3 - Desconto --> regra de 3 e printar o valor com desconto
+4 - Se não for maior do que 200, apenas printar o valor total
+
+100% ----- preco_total
+5% ------ x 
+
+100x = 5*preco_total
+x = 5*preco_total/100
+
+
+#-*- coding: UTF-8 -*-
+
+print("Olá! informe os valores dos 5 pratos escolhidos no restaurante, e caso atinja um certo valor, você ganhará um desconto!")
+
+preco_total = 0
+for x in range (5):
+    preco = float(input("Insira o valor do prato: "))
+    preco_total += preco
+                  
+if preco_total > 200:
+    desconto =  5*preco_total/100
+    com_desconto = preco_total - desconto
+    print(f'''Você atingiu o preço necessário para obter o desconto!
+Seu antigo valor de {preco_total} sofreu uma diminuição de 5 porcento! Agora ele é de %.2f reais!''' %com_desconto )
+else:
+    print(f'''Você não atingiu o preço necessário para obter o desconto...
+O preço a pagar contiua sendo de {preco_total} :( ''')
+
+
+
+==================================================================================
+questão 3) exibe números de 0 a 4
+==================================================================================
+
+questão 1) input()
+
+==================================================================================
+
+questão 7)
+
+1 - Entrar com o peso do usuário
+2 - Entrar com a altura do usuário
+3 - calcular o IMC utilizando a fórmula:  IMC = peso / (altura * altura) (peso --> kg altura --> m)
+4 - se IMC < 18,5 print está abaixo do peso!
+5 - se IMC 18,5 - 24,9 print está no peso ideal!
+6 - se IMC > 24.9 print está acima do peso!
+
+
+#-*- coding: UTF-8 -*-
+
+print('''Olá! Me dê suas informações de peso e altura e te direi qual seu estado de acordo com o cálculo do IMC!
+Observação: lembre-se de colocar o peso em quilogramas e a altura em metros!''')
+
+peso = float(input("Insira o seu peso atual: "))
+altura = float(input("Insira a sua altura atual: "))
+IMC = peso / (altura * altura)
+
+if IMC > 0 and IMC <18.5:
+    print("Você está abaixo do peso!")
+elif IMC >= 18.5 and IMC <= 24.9:
+    print("Você está no seu peso ideal!")
+else:
+    print("Você está acima do peso!")
+==================================================================================
+
+questão 6) ---> 
+
+1 - Informar que vou calcular a média e informar se ele foi aprovado ou não
+2 - solicitar 5 notas
+3 - calcular a média das notas
+4 - se for >= 6 e <=10 --> aprovado e mostrar nota
+5 - se for >= 0 e < 6 --> reprovado e mostrar a nota
+6 - se não for nenhum dos dois, mostrar mensagem de erro
+
+#-*- coding: UTF-8 -*-
+
+print("Olá! Vou calcular sua média com base nas suas notas e te dizer se você foi aprovado ou não!")
+
+total_notas = 0
+for x in range (5):
+    notas = float(input("Insira a sua nota: "))
+    total_notas += notas
+
+media = total_notas/5
+
+if media >= 0 and media <6:
+    print(f"Infelizmente você foi reprovado... A sua média foi de {media}")
+elif media >= 6 and media <= 10:
+    print(f"Parabéns! Você foi aprovado! A sua média foi de {media}")
+else:
+    print("Insira valores válidos!")
+
+
+
+==================================================================================
+
+questão 2) exibe informação na tela
+
+==================================================================================
+
+questão 8) 
+
+1 - criar a função
+2 - dentro da função entrar com o nome do usuário
+3 - imprimir saudação
+
+
+#-*- coding: UTF-8 -*-
+
+def saudacao ():
+    print("Me diga o seu nome e te enviarei uma saudação personalizada!")
+    nome = input("Qual o seu nome?")
+    print(f"Olá {nome} você é muuuito legal! Que bom que você está aqui :) ")
+
+saudacao ()
+
+===================================================================
+
+questão 9) 
+
+1 - Informar o que vou fazer e pedir um número INTEIRO para o usuário
+2 - utilizar um 'for' para formar a sequencia 
+3 - dentro dele colocar um print imprimir os valores sequenciais
+
+
+====================================================================
+
+questão 4)
+
+1 - receber o valor da compra
+2 - conferir se será maior do que 100
+3 - se for maior do que 100 aplicar o desconto de 10%
+4 - se não for maior, apenas mostrar o valor final da compra
+
+#-*- coding: UTF-8 -*-
+
+print("Olá! Me dê o valor da compra e te direi se você terá um desconto de 10% ou não, e quanto será o novo preço da sua compra!")
+
+preco = float(input("Insira o valor da compra:"))
+if preco > 100:
+    desconto =  10*preco/100
+    com_desconto = preco - desconto
+    print(f'''Você atingiu o preço necessário para obter o desconto!
+Seu antigo valor de {preco} sofreu uma diminuição de 10 porcento! Agora ele é de %.2f reais!''' %com_desconto )
+else:
+    print(f'''Você não atingiu o preço necessário para obter o desconto...
+O preço a pagar contiua sendo de {preco} :( ''')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
