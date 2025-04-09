@@ -15,5 +15,5 @@ for i in range(10):
     else:
         valor.append(letra)
         x += 1
-
+print ("As letras digitadas foram: ", valor)
 print(" Das 10 letras", x, "são consoantes")
