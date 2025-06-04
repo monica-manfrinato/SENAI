@@ -1,0 +1,39 @@
+5 - Na atualidade, em praticamente tudo é necessário criar um perfil, com usuário e senha, e essas informações são muito preciosas e devem ser armazenadas da maneira mais segura possível, pois além de criar uma senha forte, precisamos nos lembrar dela. A utilização de sites/aplicativos externos para o gerenciamento das credenciais, é muito positivo, pois quanto maior a segurança envolvida nesse armazenamento, menos chances de algum ataque ou roubo de dados acontecer, além de ser um suporte para recordar as senhas. Quando esses suportes não são utilizados, as pessoas tendem a utilizar uma mesma senha para vários aplicativos, ou seja, se alguém descobrir essa senha, também descobriu um padrão, ou literalmente a chave para todas as outras aplicações, por isso é importante a criação de senhas distintas e fortes, o uso de sites e apps para guardar essas senhas de maneira segura, formas de verificação em dois fatores para ampliar a segurança, e também a troca de senhas de tempos em tempos, pois mesmo que seja muito detalhada, ainda há chances de descobrirem, portanto a manutenção delas é outro fator essencial. 
+
+7 - Um ataque onde o invasor intercepta a comunicação entre duas partes
+
+6 - Adware
+
+2 - Vírus é um malware que se aloca em arquivos e softwares, e quando executados, vão se instalar dentro do dispositivo da vítima, por exemplo, um jogo pirata que está contaminado com vírus, e quando for instalado e executado vai afetar o usuário com perda de dados, lentidão, entre outras consequências.
+
+Worm é um malware que se propaga pela rede, ou seja, se um usuário entrar em  uma rede contaminada por um worm, ele será afetado automaticamente, pois este não exige confirmações ou alguma ação humana para se espalhar.
+
+O trojan, age da mesma forma que o cavalo de tróia, ele se disfarça de um software legítimo, e a vítima acaba baixando-o sem saber desse "problema", mas dentro podem estas outros malwares e um keylogger, que vai gravar as informações que o usuário digitar, dessa forma, roubando informações pessoais importantes. 
+
+10 - Baiting
+
+4 - A engenharia social, é um método de persuasão utilizado no campo da tecnologia para a realização de golpes e roubo de dados, ela é considerada uma das formas mais eficazes de realizar ataques cibernéticos, por fazer uso dos sentimentos humanos para a aplicação do golpe, alguns exemplos de técnicas utilizadas são:
+
+Troca Equivalente: Quando um suposto trabalhador oferece seu serviço, e em troca dele solicita algumas informações pessoais ou até mesmo acesso ao seu dispositivo ("Técnico" que solicita acesso ao seu PC mas na realidade não é um técnico de verdade)
+
+Baiting: Quando o golpista finge diversas situações para alcançar os dados requisitados, ou seja, cria falsas informações ou pedidos, para o roubo de informações
+
+Phising: Quando os golpistas enviam emails e outras fontes de contato de forma aleatória e abrangente, ou seja, tenta realizar o golpe com várias pessoas e quando a vítima é encontrada, o roubo das informações acontece.
+
+3 - O ransomware, entra no dispositivo e bloqueia todas as suas funcionalidades, rouba todos os dados que ali tinham, e apenas uma tela fica disponível para o usuário, a tela de resgate, onde é oferecido um valor a ser pago pelo resgate dessas informações, e infelizmente não é garantido que realmente vai acontecer a devolução dos dados. Ele se tornou prevalente justamente pela importância que os dados digitais tem na atualidade, uma vez que tudo está dentro dos dispositivos tecnológicos, e com o uso de bitcoin para a cobrança do resgate (uma moeda que não é "rastreável") ele ainda continua a atuar, tanto em dispositivos pessoais quanto em empresas, onde a cobrança pela devolução do dados é extremamente maior.
+
+As empresas, para não sofrerem com a perda de dados, e econômica podem realizar alguns processos de segurança, mas o principal deles é a realização de bakups diários, pois dessa forma, mesmo que esse malware esteja no computador, os dados do dia anterior estão salvos, e mesmo que haja uma perda, ela será menos significativa do que se perdessem tudo, além de não ser necessário o pagamento pelo resgate de informações. 
+Manter os softwares devidamente atualizados, Configurar corretamente as opções de segurança, instruir os funcionários corretamente e ter um plano de ação para caso esse tipo de evento aconteça, são também ações essenciais nos ambientes corporativos para auxiliar no combate não só do ransomware, mas de todos os tipos de malware.
+
+As empresas, para não sofrerem com a perda de dados, e econômica podem realizar alguns processos de segurança, mas o principal deles é a realização de bakups diários, pois dessa forma, mesmo que esse malware esteja no computador, os dados do dia anterior estão salvos, e mesmo que haja uma perda, ela será menos significativa do que se perdessem tudo, além de não ser necessário o pagamento pelo resgate de informações. 
+Manter os softwares devidamente atualizados
+
+9 - Um ataque que explora vulnerabilidade desconhecida pelo fornecedor de software
+
+1 - Segurança Cibernética é a que cuida e gerencia justamente a segurança no campo tecnológico, uma vez que é a área onde todas as informações pessoais estão armazenadas na atualidade. Ela é responsável, principalmente, por proteger os dados de possíveis ataques, incluindo métodos como o uso de VPN em redes abertas, Firewall, que vai fazer a checagem dos pacotes e garantir que malwares sejam identificados e possivelmente bloqueados, e sem ela diversos problemas poderiam acontecer, entre eles estão:
+
+- Perda de dados importantes (diversos malwares realizam o roubo de dados importantes, como contas e informações bancárias)
+- Perda do próprio dispositivo (malwares que atacam o hardware ou que vão exigir uma formatação por sobrecarga tem seus reflexos no software também)
+- Perda de muito dinheiro (As informações, além de pessoais também podem pertencer a empresas, e malwares como o ransomware, que entra no SO e bloqueia todas as  suas funcionalidades, e para recuperar os dados, esses hackers exigem um pagamento em troca, o que pode pesar para a empresa, e por isso é prejudicial economicamente.
+
+8 - Usar a mesma senha forte em todas as contas
