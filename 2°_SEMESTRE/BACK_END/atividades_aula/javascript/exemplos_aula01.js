@@ -123,19 +123,39 @@
 
 
 
-//USO DO SWITCH
+// OPERADOR TERNÁRIO
 
-// let dia = 3;
-// switch (dia) {
-//     case 1:
-//         console.log("Domingo");
-//         break;
-//     case 2:
-//         console.log("Segunda-feira");
-//         break;
-//     case 3:
-//         console.log("Terça-feira");
-//         break;
-//     default:
-//         console.log("Dia inválido");
+// let idade = 13;
+// let resultado = (idade >= 18) ? "Maior de idade" : "Menor de idade";
+// console.log(resultado); // Output: Menor de idade
+
+
+
+
+
+//SWITCH CASE
+
+// let dia = 3; 
+
+ 
+
+// switch (dia){ 
+// case 1:  
+//     console.log("Segunda"); 
+//     break 
+// case 2: 
+//     console.log("Terça"); 
+//     break 
+// default: 
+//     console.log("Outro dia"); 
+// }
+
+
+
+
+//FOR
+
+// for (let i = 0; i < 5; i++) 
+// {
+//     console.log(i);
 // }
