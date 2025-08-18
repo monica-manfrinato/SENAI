@@ -59,6 +59,7 @@
 
 
 
+
 //EXERCÍCIO PARA DETERMINAR SE É MENOR OU MAIOR DE IDADE
 
 // let idade = 18
@@ -271,6 +272,7 @@
 
 
 
+
 //EXERCÍCIO MOSTRAR TABUADA DO NÚMERO DIGITADO
 
 // num = 5
@@ -278,6 +280,7 @@
 // for (let i = 0; i <= 10; i++){
 //     console.log(i,"x", num, "=",i*num)
 // }
+
 
 
 
@@ -326,6 +329,7 @@
 // for (let i = 0; i <= 4; i++){
 //     console.log(nomes[i])
 // }
+
 
 
 
