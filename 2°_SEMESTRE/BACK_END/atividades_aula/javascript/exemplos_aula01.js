@@ -165,3 +165,41 @@
 //     console.log(nome[i]);
 // }
 
+
+
+
+//FOREACH
+
+// let = numeros = [1,2,3];
+// numeros.forEach(num => console.log(num));
+
+
+// let = contador = 0
+// while (contador < 3){
+//     console.log(contador);
+//     contador++
+// }
+
+
+//EXEMPLO DO WHILE
+
+// let num = 5;
+// do {
+//     console.log(num);
+//     num++
+// } while (num <3)
+
+
+//EXEMPLO COMANDOS ARRAY
+
+// let lista = ["banana", "maçã", "laranja"]
+// console.log(lista[0]) //banana
+
+// lista.push("Uva") //Adiciona ao final
+// lista.pop() // Remova o último
+// lista.unshift("Manga") //Adiciona no início
+// lista.shift() // Remove do inicio
+
+// console.log(lista.includes("Maçã")) //true
+// console.log(lista.indexOf("Laranja")) //2
+// console.log(lista.length) //tamanho array
