@@ -159,3 +159,9 @@
 // {
 //     console.log(i);
 // }
+
+// let nome = ["Celso", "Daniel", "Marlon"]
+// for (let i = 0; i< 3; i++){
+//     console.log(nome[i]);
+// }
+
