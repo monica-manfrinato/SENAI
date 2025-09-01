@@ -100,6 +100,22 @@
 // }
 
 
+// EXEMPLO PROFESSOR
+
+function dobro(numero){
+    return numero*2
+}
+
+function aplicarCallback(array, callback){
+    let listaDobro = []
+    for (let i = 0; i < array.length; i++){
+        listaDobro.push(callback(array[i]))
+    }
+    return listaDobro
+}
+
+console.log(aplicarCallback([2,4,6,8,10],dobro))
+
 
 
 // EXERCÍCIO FUNÇÃO RECURSIVA COM 1 AO 10 EM ORDEM DECRESCENTE
