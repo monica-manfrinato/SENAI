@@ -76,7 +76,7 @@ Monica.calculandoMedia();
 
 //CLASSE RETANGULO
 
-class retangulo {
+class Retangulo {
   constructor(base, altura) {
     this.base = base;
     this.altura = altura;
@@ -93,7 +93,7 @@ class retangulo {
   }
 }
 
-const retangulo4x5 = new retangulo(4, 5);
+const retangulo4x5 = new Retangulo(4, 5);
 retangulo4x5.calculandoArea();
 retangulo4x5.calculandoPerimetro();
 
@@ -101,7 +101,7 @@ retangulo4x5.calculandoPerimetro();
 
 //CLASSE CARRO
 
-class carro {
+class Carro {
   constructor(marca, modelo, combustivel) {
     this.marca = marca;
     this.modelo = modelo;
@@ -128,6 +128,6 @@ class carro {
   }
 }
 
-const carroMonica = new carro("Fiat", "Fastback", 0);
+const carroMonica = new Carro("Fiat", "Fastback", 0);
 carroMonica.abastecerLitro(40);
 carroMonica.dirigirKm(2000);
