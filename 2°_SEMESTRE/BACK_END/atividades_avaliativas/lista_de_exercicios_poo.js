@@ -118,12 +118,16 @@ class carro {
   dirigirKm(kmRodados) {
     let gastoCombustivel = kmRodados / 10;
     this.combustivel -= gastoCombustivel;
+    if (this.combustivel <= 0 ){
+      console.log("Seu veículo não conseguiu completar o caminho... O combustível acabou antes")
+    }
+    else{
     console.log(
       `Depois de rodar por ${kmRodados}Km, seu veículo gastou ${gastoCombustivel}L, e ficou com ${this.combustivel}L`
-    );
+    );}
   }
 }
 
-const carroMonica = new carro("Fiat", "Fastback", 500);
+const carroMonica = new carro("Fiat", "Fastback", 0);
 carroMonica.abastecerLitro(40);
 carroMonica.dirigirKm(2000);
