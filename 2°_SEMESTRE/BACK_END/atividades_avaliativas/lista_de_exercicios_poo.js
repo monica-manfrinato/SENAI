@@ -84,13 +84,11 @@ class retangulo {
 
   calculandoArea() {
     let area = this.base * this.altura;
-
     console.log(`O retangulo descrito possuí área igual a:${area}`);
   }
 
   calculandoPerimetro() {
     let perimetro = this.base * 2 + this.altura * 2;
-
     console.log(`Seu perímetro é igual a:${perimetro}`);
   }
 }
@@ -110,24 +108,22 @@ class carro {
     this.combustivel = combustivel;
   }
 
-  abastecerLitro() {
-    let quantidadeAbastecida = 10;
-    let abastecer = this.combustivel + quantidadeAbastecida;
+  abastecerLitro(quantidadeAbastecida) {
+    this.combustivel += quantidadeAbastecida;
     console.log(
-      `Foram abastecidos mais ${quantidadeAbastecida}L ao seu veículo, agora ele está com ${abastecer}L`
+      `Foram abastecidos mais ${quantidadeAbastecida}L ao seu veículo, agora ele está com ${this.combustivel}L`
     );
   }
 
-  dirigirKm() {
-    let kmRodados = 200;
+  dirigirKm(kmRodados) {
     let gastoCombustivel = kmRodados / 10;
-    let quantidadeRestante = this.combustivel - gastoCombustivel;
+    this.combustivel -= gastoCombustivel;
     console.log(
-      `Depois de rodar por ${kmRodados}Km, seu veículo gastou ${gastoCombustivel}L, e ficou com ${quantidadeRestante}L`
+      `Depois de rodar por ${kmRodados}Km, seu veículo gastou ${gastoCombustivel}L, e ficou com ${this.combustivel}L`
     );
   }
 }
 
-const carroMonica = new carro("Fiat", "Fastback", 550);
-carroMonica.abastecerLitro();
-carroMonica.dirigirKm();
+const carroMonica = new carro("Fiat", "Fastback", 500);
+carroMonica.abastecerLitro(40);
+carroMonica.dirigirKm(2000);
