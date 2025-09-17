@@ -17,3 +17,6 @@ create index idx_titulo on tbl_livros (titulo);
 
 alter table  tbl_livros add genero VARCHAR(50) after id_livro; #o after define depois doq a nova coluna vai ser adicionada
 alter table tbl_livros drop column genero; #apagar determinada coluna da tabela
+alter table tbl_livros modify genero VARCHAR(60) first; #faz alteração na coluna que está sendo utilizada
+
+create index idx_titulo on tbl_livros (titulo);
