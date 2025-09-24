@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `db_biblioteca_b` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `db_biblioteca_b`;
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: db_biblioteca_b
@@ -16,35 +18,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_livros`
---
-
-DROP TABLE IF EXISTS `tbl_livros`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_livros` (
-  `genero` varchar(60) DEFAULT NULL,
-  `id_livro` int(11) DEFAULT NULL,
-  `titulo` varchar(100) DEFAULT NULL,
-  `autor` varchar(100) DEFAULT NULL,
-  `ano_publicacao` int(11) DEFAULT NULL,
-  `preco` decimal(10,2) DEFAULT NULL,
-  KEY `idx_livros` (`titulo`),
-  KEY `idx_titulo` (`titulo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_livros`
---
-
-LOCK TABLES `tbl_livros` WRITE;
-/*!40000 ALTER TABLE `tbl_livros` DISABLE KEYS */;
-INSERT INTO `tbl_livros` VALUES (NULL,1,'Dom Casmurro','Machado de Assis',1899,39.90),(NULL,2,'O Alquimista','Paulo Coelho',1988,29.50),(NULL,3,'A Hora da Estrela','Clarice Lispector',1977,34.00);
-/*!40000 ALTER TABLE `tbl_livros` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Dumping routines for database 'db_biblioteca_b'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +30,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-17 15:38:57
+-- Dump completed on 2025-09-24 14:30:03
