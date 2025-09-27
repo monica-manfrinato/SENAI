@@ -69,3 +69,26 @@ mercado.adicionarProduto("Pão Francês", 0.50);
 mercado.adicionarProduto("Suco de uva", 15);
 
 console.log("Total de produtos:", mercado.produtos.length); // Total de produtos: 3
+
+// Objeto criado e instanciado IMEDIATAMENTE:
+const usuario = new class {
+    constructor(nome) {
+        this.nome = nome;
+        this.login = Date.now();
+    }
+}("Ana"); // ← Instanciação direta na declaração
+
+console.log(usuario.nome); // "Ana" - já pode usar!
+
+
+function criarAnimal(ClasseAnimal, nome) {
+    return new ClasseAnimal(nome);
+}
+
+const meuPet = criarAnimal(class {
+    constructor(nome) {
+        this.nome = nome;
+    }
+}, "Pingo");
+
+console.log(meuPet.nome);
