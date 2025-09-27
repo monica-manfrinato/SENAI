@@ -1,30 +1,36 @@
 class Veiculo {
     constructor() {
-        console.log("Essa é a classe abstrata!");
+        
+        if (this.constructor == Veiculo) {
+            throw new Error("Essa é a classe abstrata!");
+        }
     }
     
     mover() {
-        console.log("O método não pode ser implementado aqui! Somente na classe filha");
+        // não deixa o método ser utilizado
+        throw new Error("Esse método só pode ser utilizado nas classes filhas!");
     }
+    
 }
 
 class Carro extends Veiculo {
     mover() {
-        console.log("Carro anda na estrada!");
+        console.log("O carro anda na estrada!");
     }
 }
 
 class Moto extends Veiculo {
     mover() {
-        console.log("Moto anda na estrada!");
+        console.log("A moto anda na estrada!");
     }
 }
 
 class Aviao extends Veiculo {
     mover() {
-        console.log("Avão voa no céu!");
+        console.log("O avião voa no céu!");
     }
 }
+
 
 
 const meuCarro = new Carro();
