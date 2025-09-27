@@ -40,3 +40,32 @@ const meuAviao = new Aviao();
 meuCarro.mover();
 minhaMoto.mover();
 meuAviao.mover();
+
+
+class Mercado {
+    constructor() {
+        this.produtos = []; 
+    }
+
+    adicionarProduto(nome, preco) {
+        const mercado = this;
+
+        class Produto {
+            constructor(nome, preco) {
+                this.nome = nome;
+                this.preco = preco;
+                mercado.produtos.push(this);
+            }
+        }
+
+        return new Produto(nome, preco);
+    }
+}
+
+const mercado = new Mercado();
+
+mercado.adicionarProduto("Batata", 10);
+mercado.adicionarProduto("Pão Francês", 0.50);
+mercado.adicionarProduto("Suco de uva", 15);
+
+console.log("Total de produtos:", mercado.produtos.length); // Total de produtos: 3
