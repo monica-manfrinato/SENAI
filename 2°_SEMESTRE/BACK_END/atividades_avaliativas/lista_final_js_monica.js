@@ -3,6 +3,24 @@
 
 // Exercício 1: Crie uma função que receba uma string e retorne a quantidade de vogais presentes.
 
+function contagemVogais (palavra) {
+    let quantVogais = 0
+    const vogais = "aAeEiIoOuUáàâãÁÀÂÃéèêÉÈÊíìîÍÌÎóòôõÓÒÔÕúùûÚÙÛ"
+    let quantLetras = palavra.length
+    for (let i = 0; i < palavra.length; i++){
+        if (vogais.includes(palavra[i]))
+            quantVogais++
+    }
+
+    return quantVogais
+}
+
+const palavra = "Açúcar";
+const quantLetras = palavra.length;
+const quantVogais = contagemVogais(palavra)
+
+console.log(`A palavra ${palavra} possuí ${quantLetras} letras, sendo ${quantVogais} vogais!`)
+
 // Exercício 2: Implemente uma função que receba um número e retorne a sequência de Fibonacci até esse número.
 
 // Exercício 3: Crie uma função que receba um array de números e retorne apenas os números primos.
