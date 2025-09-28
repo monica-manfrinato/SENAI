@@ -408,6 +408,62 @@ console.log(`Segundo a sequência de Fibonacci, o valor de ${valorFinal} posiç�
 // - Acao (rende valores aleatórios entre -5% e +10% ao mês).
 // Implemente o cálculo mês a mês.
 
+// Exercício 15: Crie uma classe Investimento com um método calcularRendimento(valor, meses).
+//Depois crie subclasses:
+// - RendaFixa (rende 0,7% ao mês).
+// - CDB (rende 1% ao mês, mas cobra 15% de imposto sobre o lucro).
+// - Acao (rende valores aleatórios entre -5% e +10% ao mês).
+// Implemente o cálculo mês a mês.
+
+// class Investimento{
+  
+//   calcularRendimento(valor, meses){}
+// }
+
+
+// class RendaFixa extends Investimento{
+
+// calcularRendimento(valor,meses){
+//   let rendimento = valor*1.007**meses
+//   console.log(`Seu dinheiro rendeu ${rendimento-valor}, ficando com ${rendimento} ao final de ${meses} meses.`)
+// }
+// }
+
+
+// class CDB extends Investimento{
+// calcularRendimento(valor,meses){
+//   let rendimento = valor*1.01**meses
+//   let lucro = rendimento - valor
+//   let imposto = lucro*0.15
+//   console.log(`Seu dinheiro rendeu ${lucro}, ficando com ${rendimento - imposto} ao final de ${meses} meses.`)
+// }
+// }
+
+
+// class Acao extends Investimento{
+//   calcularRendimento(valor,meses){
+//     let valorAtual = valor
+    
+//     for(let mes = 1; mes <= meses; mes++){
+//       // Gera variação aleatória entre -5% e +10%
+//       let variacao = (Math.random() * 15 - 5) / 100
+//       valorAtual = valorAtual * (1 + variacao)
+//     }
+    
+//     let lucro = valorAtual - valor
+//     console.log(`Seu dinheiro rendeu ${lucro}, ficando com ${valorAtual} ao final de ${meses} meses.`)
+//   }
+// }
+
+
+// const rendaFixa = new RendaFixa()
+// rendaFixa.calcularRendimento(1000, 12)
+
+// const cdb = new CDB()
+// cdb.calcularRendimento(1000, 12)
+
+// const acao = new Acao()
+// acao.calcularRendimento(1000, 12)
 
 
 
