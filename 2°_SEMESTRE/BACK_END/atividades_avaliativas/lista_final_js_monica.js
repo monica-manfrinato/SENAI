@@ -82,6 +82,29 @@ arroz.vender(50)
 
 // Exercício 6: Crie uma classe ContaEnergia que recebe consumoKwh e valorPorKwh. Adicione um método que calcula o valor total da conta.
 
+class ContaEnergia{
+  constructor(consumoKwh, valorPorKwh){
+  this.consumoKwh = consumoKwh
+  this.valorPorKwh = valorPorKwh
+  }
+  
+  valorConta(){
+    if(this.consumoKwh <= 0 || this.valorPorKwh <= 0 ){
+      console.log("Insira valores válidos!")
+
+    }
+    else{
+    let valorTotal = this.consumoKwh*this.valorPorKwh
+    console.log(`O valor final da conta foi de ${valorTotal} reais!`)
+    }
+    
+  }
+  
+}
+
+const contaMonica = new ContaEnergia(40, 0.70)
+contaMonica.valorConta()
+
 // Exercício 7: Crie uma classe Aluno com notas de 3 provas. Adicione um método media() que calcula a média e outro aprovado() que retorna se a média é maior ou igual a 7.
 
 // Exercício 8: Crie uma classe Cinema que tem nome, capacidade e ingressosVendidos. Adicione um método venderIngresso(qtd) que só permite vender se houver lugares disponíveis.
