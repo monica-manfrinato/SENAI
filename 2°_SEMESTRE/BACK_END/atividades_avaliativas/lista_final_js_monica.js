@@ -350,6 +350,58 @@ console.log(`Segundo a sequência de Fibonacci, o valor de ${valorFinal} posiç�
 // - Estagiario (desconta 5% de vale transporte).
 // Implemente o método calcularSalarioLiquido() em cada subclasse.
 
+// Exercício 14: Crie uma classe Funcionario com atributos nome e salarioBase. Depois crie subclasses:
+// - FuncionarioCLT (desconta 10% de imposto do salário + 5% de comissão).
+// - FuncionarioPJ (sem desconto).
+// - Estagiario (desconta 5% de vale transporte).
+// Implemente o método calcularSalarioLiquido() em cada subclasse.
+
+// class Funcionario {
+//   constructor(nome, salarioBase){
+//     this.nome = nome
+//     this.salarioBase = salarioBase
+//   }
+// }
+
+//  class FuncionarioCLT extends Funcionario{
+//     constructor(nome, salarioBase){
+//     super(nome, salarioBase)}
+  
+//   calcularSalarioLiquido(){
+//   let salarioImposto = this.salarioBase - this.salarioBase*0.10
+//   let salarioFinal = salarioImposto*1.05
+//   console.log(`O(a) funcionário(a) ${this.nome} recebe um salário de ${salarioFinal} reais`)
+//   }
+// }
+
+// class FuncionarioPJ extends Funcionario{
+//   constructor(nome, salarioBase){
+//     super(nome, salarioBase)}
+    
+//   calcularSalarioLiquido()
+//   {console.log(`O(a) funcionário(a) ${this.nome} recebe um salário de ${this.salarioBase} reais`)}
+// }
+
+
+// class Estagiario extends Funcionario{
+//   constructor(nome, salarioBase){
+//     super(nome, salarioBase)}
+//   calcularSalarioLiquido()
+//   {let salarioVale = this.salarioBase - this.salarioBase*0.05
+//   console.log(`O(a) funcionário(a) ${this.nome} recebe um salário de ${salarioVale} reais`)}
+// }
+  
+  
+//   const Monica = new FuncionarioCLT('Mônica', 2000)
+//   Monica.calcularSalarioLiquido()
+  
+//   const Rafael = new FuncionarioPJ('Rafael', 2000)
+//   Rafael.calcularSalarioLiquido()
+  
+//   const Davi = new Estagiario('Davi', 2000)
+//   Davi.calcularSalarioLiquido()
+  
+
 // Exercício 15: Crie uma classe Investimento com um método calcularRendimento(valor, meses).Depois crie subclasses:
 // - RendaFixa (rende 0,7% ao mês).
 // - CDB (rende 1% ao mês, mas cobra 15% de imposto sobre o lucro).
