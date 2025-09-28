@@ -54,204 +54,287 @@ console.log(`Segundo a sequência de Fibonacci, o valor de ${valorFinal} posiç�
 
 // Exercício 5: Crie uma classe Produto com atributos nome, preco e estoque. Adicione um método vender(quantidade) que diminui o estoque.
 
-class Produto{
-  constructor(nome, preco, estoque){
-    this.nome = nome
-    this.preco = preco
-    this.estoque = estoque
-  }
+// class Produto{
+//   constructor(nome, preco, estoque){
+//     this.nome = nome
+//     this.preco = preco
+//     this.estoque = estoque
+//   }
 
-  vender(quantidade){
+//   vender(quantidade){
 
-    if (quantidade === 0){
-      console.log(`Nao foi possível realizar a venda, estoque ${this.nome} está zerado!`)
-    }
-    else if(quantidade > this.estoque){
-      console.log(`Não foi possível realizar a venda, o estoque de ${this.nome} tem apenas ${this.estoque} itens!`)
-    }
-    else{
-    this.estoque = this.estoque - quantidade
-    console.log(`Após a venda, restaram ${this.estoque} unidades de ${this.nome} no estoque.`)
+//     if (quantidade === 0){
+//       console.log(`Nao foi possível realizar a venda, estoque ${this.nome} está zerado!`)
+//     }
+//     else if(quantidade > this.estoque){
+//       console.log(`Não foi possível realizar a venda, o estoque de ${this.nome} tem apenas ${this.estoque} itens!`)
+//     }
+//     else{
+//     this.estoque = this.estoque - quantidade
+//     console.log(`Após a venda, restaram ${this.estoque} unidades de ${this.nome} no estoque.`)
     
-    }
-  }
-}
+//     }
+//   }
+// }
 
-const arroz = new Produto ("arroz", 12.50, 40)
-arroz.vender(50)
+// const arroz = new Produto ("arroz", 12.50, 40)
+// arroz.vender(50)
 
 // Exercício 6: Crie uma classe ContaEnergia que recebe consumoKwh e valorPorKwh. Adicione um método que calcula o valor total da conta.
 
-class ContaEnergia{
-  constructor(consumoKwh, valorPorKwh){
-  this.consumoKwh = consumoKwh
-  this.valorPorKwh = valorPorKwh
-  }
+// class ContaEnergia{
+//   constructor(consumoKwh, valorPorKwh){
+//   this.consumoKwh = consumoKwh
+//   this.valorPorKwh = valorPorKwh
+//   }
   
-  valorConta(){
-    if(this.consumoKwh <= 0 || this.valorPorKwh <= 0 ){
-      console.log("Insira valores válidos!")
+//   valorConta(){
+//     if(this.consumoKwh <= 0 || this.valorPorKwh <= 0 ){
+//       console.log("Insira valores válidos!")
 
-    }
-    else{
-    let valorTotal = this.consumoKwh*this.valorPorKwh
-    console.log(`O valor final da conta foi de ${valorTotal} reais!`)
-    }
+//     }
+//     else{
+//     let valorTotal = this.consumoKwh*this.valorPorKwh
+//     console.log(`O valor final da conta foi de ${valorTotal} reais!`)
+//     }
     
-  }
+//   }
   
-}
+// }
 
-const contaMonica = new ContaEnergia(40, 0.70)
-contaMonica.valorConta()
+// const contaMonica = new ContaEnergia(40, 0.70)
+// contaMonica.valorConta()
 
 // Exercício 7: Crie uma classe Aluno com notas de 3 provas. Adicione um método media() que calcula a média e outro aprovado() que retorna se a média é maior ou igual a 7.
 
-class Aluno{
-  constructor(nota1, nota2, nota3){
-    this.nota1 = nota1
-    this.nota2 = nota2
-    this.nota3 = nota3
-  }
+// class Aluno{
+//   constructor(nota1, nota2, nota3){
+//     this.nota1 = nota1
+//     this.nota2 = nota2
+//     this.nota3 = nota3
+//   }
   
-  media(){
-    if(this.nota1 < 0 ||this.nota2 < 0 || this.nota3 < 0 ){
-      console.log("Insira uma nota válida!")
-      }
+//   media(){
+//     if(this.nota1 < 0 ||this.nota2 < 0 || this.nota3 < 0 ){
+//       console.log("Insira uma nota válida!")
+//       }
       
-    else{
-      let media = (this.nota1 + this.nota2 + this.nota3)/3
-      console.log(`A média desse aluno foi ${media}.`)
-    }
-    }
-  }
+//     else{
+//       let media = (this.nota1 + this.nota2 + this.nota3)/3
+//       console.log(`A média desse aluno foi ${media}.`)
+//     }
+//     }
+//   }
   
-const monica = new Aluno(10, 9, 8)
-monica.media()
+// const monica = new Aluno(10, 9, 8)
+// monica.media()
 
 // Exercício 8: Crie uma classe Cinema que tem nome, capacidade e ingressosVendidos. Adicione um método venderIngresso(qtd) que só permite vender se houver lugares disponíveis.
 
-class Cinema {
-  constructor(nome, capacidade, ingressosVendidos){
-    this.nome = nome
-    this.capacidade = capacidade
-    this.ingressosVendidos = ingressosVendidos
-  }
+// class Cinema {
+//   constructor(nome, capacidade, ingressosVendidos){
+//     this.nome = nome
+//     this.capacidade = capacidade
+//     this.ingressosVendidos = ingressosVendidos
+//   }
   
-  venderIngresso(qtd){
-    if(qtd <= 0 ){
-      console.log("O número mínimo de compra é 1 ingresso!")
-    }
-    else if (this.capacidade - this.ingressosVendidos  >= qtd){
-      console.log(`Parabéns! A compra de ${qtd} ingressos foi efetuada! Boa sessão!`)
-      this.ingressosVendidos += qtd
+//   venderIngresso(qtd){
+//     if(qtd <= 0 ){
+//       console.log("O número mínimo de compra é 1 ingresso!")
+//     }
+//     else if (this.capacidade - this.ingressosVendidos  >= qtd){
+//       console.log(`Parabéns! A compra de ${qtd} ingressos foi efetuada! Boa sessão!`)
+//       this.ingressosVendidos += qtd
     
-    }
-    else{
-      let qutdIngressos = this.capacidade - this.ingressosVendidos
-      console.log(`Infelizmente sua compra não pode ser efetuada, apenas ${qutdIngressos} ingressos estão disponíveis...`)
-    }
-  }
-}
+//     }
+//     else{
+//       let qutdIngressos = this.capacidade - this.ingressosVendidos
+//       console.log(`Infelizmente sua compra não pode ser efetuada, apenas ${qutdIngressos} ingressos estão disponíveis...`)
+//     }
+//   }
+// }
 
-const araujoItu = new Cinema ('araujoItu', 200, 198)
+// const araujoItu = new Cinema ('araujoItu', 200, 198)
 
-araujoItu.venderIngresso(0) //erro de mínimo de compra 
-araujoItu.venderIngresso(2)
-araujoItu.venderIngresso(2) //os dois ingressos de cima ocuparam as vagas que tinha
+// araujoItu.venderIngresso(0) //erro de mínimo de compra 
+// araujoItu.venderIngresso(2)
+// araujoItu.venderIngresso(2) //os dois ingressos de cima ocuparam as vagas que tinha
 
 // Exercício 9: Crie uma classe Biblioteca que armazena uma lista de livros. Adicione métodos adicionarLivro, removerLivro e listarLivros
 
-class Biblioteca {
-  constructor(){
-    this.livros = []
-  }
+// class Biblioteca {
+//   constructor(){
+//     this.livros = []
+//   }
   
-  adicionarLivro(livro){
-  this.livros.push(livro)
-  console.log(`O livro ${livro} foi adicionado!`)
-  }
+//   adicionarLivro(livro){
+//   this.livros.push(livro)
+//   console.log(`O livro ${livro} foi adicionado!`)
+//   }
 
-  removerLivro(livro){
-  const livroRemovido = this.livros.pop() //vai remover o último livro, não sei outra forma de fazer
-  console.log(`O livro ${livroRemovido} foi removido do sistema!`)
+//   removerLivro(livro){
+//   const livroRemovido = this.livros.pop() //vai remover o último livro, não sei outra forma de fazer
+//   console.log(`O livro ${livroRemovido} foi removido do sistema!`)
   
-  }
+//   }
 
-  listarLivros(){
+//   listarLivros(){
   
-  for (let i = 0; i< this.livros.length; i++){
-    console.log(this.livros[i])
-    }
-  }
-}
+//   for (let i = 0; i< this.livros.length; i++){
+//     console.log(this.livros[i])
+//     }
+//   }
+// }
 
 
-biblioteca = new Biblioteca()
-biblioteca.adicionarLivro('1. Percy Jackson')
-biblioteca.adicionarLivro('2. Tweet Cute')
-biblioteca.adicionarLivro('3. O diário de Anne Frank')
+// biblioteca = new Biblioteca()
+// biblioteca.adicionarLivro('1. Percy Jackson')
+// biblioteca.adicionarLivro('2. Tweet Cute')
+// biblioteca.adicionarLivro('3. O diário de Anne Frank')
 
-biblioteca.listarLivros()
+// biblioteca.listarLivros()
 
-biblioteca.removerLivro()
-biblioteca.listarLivros()
+// biblioteca.removerLivro()
+// biblioteca.listarLivros()
 
 //Parte 3: Encapsulamento///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // Exercício 10: Crie uma classe Cofrinho que armazena valores de moedas e notas em um atributo privado. Adicione métodos depositar(valor), retirar(valor) e saldo().
 
-class Cofrinho{
-  #moedas
-  #notas
-  constructor(moedas, notas){
-    this.#moedas = moedas
-    this.#notas = notas
-  }
+// class Cofrinho{
+//   #moedas
+//   #notas
+//   constructor(moedas, notas){
+//     this.#moedas = moedas
+//     this.#notas = notas
+//   }
   
-  depositar(qtdMoedas, qtdNotas){
+//   depositar(qtdMoedas, qtdNotas){
     
-    this.#moedas += qtdMoedas
-    this.#notas += qtdNotas
-  }
+//     this.#moedas += qtdMoedas
+//     this.#notas += qtdNotas
+//   }
   
-  retirar(qtdMoedas, qtdNotas){
+//   retirar(qtdMoedas, qtdNotas){
 
-    if (qtdMoedas > this.#moedas || qtdNotas > this.#notas) {
-      console.log(`Não foi possível retirar ${qtdMoedas} moedas e ${qtdNotas} notas`)
-      console.log(`Saldo atual: ${this.#moedas} moedas e ${this.#notas} notas`)
-    }
-    else{
-    this.#moedas -= qtdMoedas
-    this.#notas -= qtdNotas
-    console.log(`Foram retiradas ${qtdMoedas} moedas e ${qtdNotas} notas`)
-    console.log(`Restaram ${this.#moedas} moedas e ${this.#notas} notas`)
-    }
+//     if (qtdMoedas > this.#moedas || qtdNotas > this.#notas) {
+//       console.log(`Não foi possível retirar ${qtdMoedas} moedas e ${qtdNotas} notas`)
+//       console.log(`Saldo atual: ${this.#moedas} moedas e ${this.#notas} notas`)
+//     }
+//     else{
+//     this.#moedas -= qtdMoedas
+//     this.#notas -= qtdNotas
+//     console.log(`Foram retiradas ${qtdMoedas} moedas e ${qtdNotas} notas`)
+//     console.log(`Restaram ${this.#moedas} moedas e ${this.#notas} notas`)
+//     }
 
     
-  }
+//   }
   
-  get saldo(){
-    console.log(`=== SALDO DO COFRINHO ===`)
-    console.log(`Moedas: ${this.#moedas}`)
-    console.log(`Notas: ${this.#notas}`)
+//   get saldo(){
+//     console.log(`=== SALDO DO COFRINHO ===`)
+//     console.log(`Moedas: ${this.#moedas}`)
+//     console.log(`Notas: ${this.#notas}`)
 
-  }
-}
+//   }
+// }
   
-const cofrinhoMonica = new Cofrinho(5, 5)
-cofrinhoMonica.depositar(10, 5)
+// const cofrinhoMonica = new Cofrinho(5, 5)
+// cofrinhoMonica.depositar(10, 5)
 
-cofrinhoMonica.saldo //adicionei 10 e 5 então fica 15 e 10
+// cofrinhoMonica.saldo //adicionei 10 e 5 então fica 15 e 10
 
-cofrinhoMonica.retirar(3, 2)
+// cofrinhoMonica.retirar(3, 2)
 
-cofrinhoMonica.saldo //retirei 3 e 2 então fica 12 e 8
+// cofrinhoMonica.saldo //retirei 3 e 2 então fica 12 e 8
 
-cofrinhoMonica.retirar(20, 10) //erro pois não há saldo o suficiente para retirar essa quantidade de notas e moedas
+// cofrinhoMonica.retirar(20, 10) //erro pois não há saldo o suficiente para retirar essa quantidade de notas e moedas
 
 // Exercício 11: Crie uma classe Banco que possua contas privadas. Cada conta deve ter número, titular e saldo. Adicione métodos abrirConta(titular, saldoInicial), consultarSaldo(numeroConta) e transferir(contaOrigem, contaDestino, valor).
+
+// Exercício 11: Crie uma classe Banco que possua contas privadas. 
+//Cada conta deve ter número, titular e saldo. 
+//Adicione métodos abrirConta(titular, saldoInicial), consultarSaldo(numeroConta) e 
+//transferir(contaOrigem, contaDestino, valor).
+
+// class Banco {
+  
+//   #contas = {}
+//   #proximoNumero = 101
+  
+//   constructor(contas){}
+  
+//   abrirConta(titular, saldoInicial){
+    
+    
+//     const numeroConta = this.#proximoNumero
+//       this.#contas[numeroConta] = {
+//         titular: titular,
+//         saldo: saldoInicial
+//       }
+//       this.#proximoNumero++ //já deixa pronto o valor para a próxima conta
+//       console.log(`${titular}, sua conta foi criada com sucesso! Ela possuí número ${numeroConta}`)
+//       return numeroConta //nesse número estão armazenadas as informações da conta criada
+//     }
+
+
+
+
+//   consultarSaldo(numeroConta){
+    
+//     if (this.#contas[numeroConta]){
+//       console.log (`A conta de número ${numeroConta} tem saldo igual a: ${this.#contas[numeroConta].saldo} reais`)
+//       } 
+//     else {
+//       console.log(`A conta ${numeroConta} não foi encontrada!`)
+//     }
+    
+//   }
+  
+  
+  
+  
+//   transferir(contaOrigem, contaDestino, valor){
+    
+//     if (!this.#contas[contaOrigem]) { //o ! é utilizado para analisar se a condição é falsa
+//       console.log(`A conta de origem ${contaOrigem} não foi encontrada!`)
+//       return
+//     }
+    
+//     if (!this.#contas[contaDestino]) {
+//       console.log(`A conta de destino ${contaDestino} não foi encontrada!`)
+//       return
+//     }
+    
+    
+//     if (this.#contas[contaOrigem].saldo < valor) { //confere se o valor que está sendo transferido não é maior do que o valor q tem na conta
+//       console.log(`Saldo insuficiente na conta ${contaOrigem}`)
+//       return //coloca return no final dos erros, porque se não ele vai executar as coisas q estão embaixo
+//       }
+    
+    
+//     this.#contas[contaOrigem].saldo -= valor //tira da conta origem
+//     this.#contas[contaDestino].saldo += valor //coloca na conta destino
+//     console.log(`A transferência de ${valor} reais foi realizada com sucesso!`)
+    
+//   }
+// }
+
+
+
+// const bancobr = new Banco()
+
+// const contaMonica = bancobr.abrirConta('Mônica', 1000)
+// const contaPaula = bancobr.abrirConta('Paula', 200)
+
+// bancobr.consultarSaldo(contaMonica)
+// bancobr.consultarSaldo(contaPaula)
+
+// bancobr.transferir(contaMonica, contaPaula, 200)
+
+// bancobr.consultarSaldo(contaMonica) //-200 reais (800)
+// bancobr.consultarSaldo(contaPaula) //+200 reais (400)
 
 // Exercício 12: Crie uma classe Pedido que armazena uma lista privada de itens (nome do produto e valor). Adicione métodos adicionarItem, removerItem e calcularTotal.
 
