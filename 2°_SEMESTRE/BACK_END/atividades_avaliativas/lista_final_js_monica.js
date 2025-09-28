@@ -131,7 +131,34 @@ monica.media()
 
 // Exercício 8: Crie uma classe Cinema que tem nome, capacidade e ingressosVendidos. Adicione um método venderIngresso(qtd) que só permite vender se houver lugares disponíveis.
 
+class Cinema {
+  constructor(nome, capacidade, ingressosVendidos){
+    this.nome = nome
+    this.capacidade = capacidade
+    this.ingressosVendidos = ingressosVendidos
+  }
+  
+  venderIngresso(qtd){
+    if(qtd <= 0 ){
+      console.log("O número mínimo de compra é 1 ingresso!")
+    }
+    else if (this.capacidade - this.ingressosVendidos  >= qtd){
+      console.log(`Parabéns! A compra de ${qtd} ingressos foi efetuada! Boa sessão!`)
+      this.ingressosVendidos += qtd
+    
+    }
+    else{
+      let qutdIngressos = this.capacidade - this.ingressosVendidos
+      console.log(`Infelizmente sua compra não pode ser efetuada, apenas ${qutdIngressos} ingressos estão disponíveis...`)
+    }
+  }
+}
 
+const araujoItu = new Cinema ('araujoItu', 200, 198)
+
+araujoItu.venderIngresso(0) //erro de mínimo de compra 
+araujoItu.venderIngresso(2)
+araujoItu.venderIngresso(2) //os dois ingressos de cima ocuparam as vagas que tinha
 
 // Exercício 9: Crie uma classe Biblioteca que armazena uma lista de livros. Adicione métodos adicionarLivro, removerLivro e listarLivros
 
