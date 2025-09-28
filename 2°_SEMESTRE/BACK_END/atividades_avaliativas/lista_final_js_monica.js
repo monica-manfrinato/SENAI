@@ -162,7 +162,40 @@ araujoItu.venderIngresso(2) //os dois ingressos de cima ocuparam as vagas que ti
 
 // Exercício 9: Crie uma classe Biblioteca que armazena uma lista de livros. Adicione métodos adicionarLivro, removerLivro e listarLivros
 
+class Biblioteca {
+  constructor(){
+    this.livros = []
+  }
+  
+  adicionarLivro(livro){
+  this.livros.push(livro)
+  console.log(`O livro ${livro} foi adicionado!`)
+  }
 
+  removerLivro(livro){
+  const livroRemovido = this.livros.pop() //vai remover o último livro, não sei outra forma de fazer
+  console.log(`O livro ${livroRemovido} foi removido do sistema!`)
+  
+  }
+
+  listarLivros(){
+  
+  for (let i = 0; i< this.livros.length; i++){
+    console.log(this.livros[i])
+    }
+  }
+}
+
+
+biblioteca = new Biblioteca()
+biblioteca.adicionarLivro('1. Percy Jackson')
+biblioteca.adicionarLivro('2. Tweet Cute')
+biblioteca.adicionarLivro('3. O diário de Anne Frank')
+
+biblioteca.listarLivros()
+
+biblioteca.removerLivro()
+biblioteca.listarLivros()
 
 //Parte 3: Encapsulamento///////////////////////////////////////////////////////////////////////////////////////////////////
 
