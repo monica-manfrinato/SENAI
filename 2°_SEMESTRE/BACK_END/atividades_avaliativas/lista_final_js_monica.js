@@ -3,45 +3,45 @@
 
 // Exercício 1: Crie uma função que receba uma string e retorne a quantidade de vogais presentes.
 
-function contagemVogais (palavra) {
-    let quantVogais = 0
-    const vogais = "aAeEiIoOuUáàâãÁÀÂÃéèêÉÈÊíìîÍÌÎóòôõÓÒÔÕúùûÚÙÛ"
-    let quantLetras = palavra.length
-    for (let i = 0; i < palavra.length; i++){
-        if (vogais.includes(palavra[i]))
-            quantVogais++
-    }
+// function contagemVogais (palavra) {
+//     let quantVogais = 0
+//     const vogais = "aAeEiIoOuUáàâãÁÀÂÃéèêÉÈÊíìîÍÌÎóòôõÓÒÔÕúùûÚÙÛ"
+//     let quantLetras = palavra.length
+//     for (let i = 0; i < palavra.length; i++){
+//         if (vogais.includes(palavra[i]))
+//             quantVogais++
+//     }
 
-    return quantVogais
-}
+//     return quantVogais
+// }
 
-const palavra = "Açúcar";
-const quantLetras = palavra.length;
-const quantVogais = contagemVogais(palavra)
+// const palavra = "Açúcar";
+// const quantLetras = palavra.length;
+// const quantVogais = contagemVogais(palavra)
 
-console.log(`A palavra ${palavra} possuí ${quantLetras} letras, sendo ${quantVogais} vogais!`)
+// console.log(`A palavra ${palavra} possuí ${quantLetras} letras, sendo ${quantVogais} vogais!`)
 
-// Exercício 2: Implemente uma função que receba um número e retorne a sequência de Fibonacci até esse número.
+// // Exercício 2: Implemente uma função que receba um número e retorne a sequência de Fibonacci até esse número.
 
-function sequenciaFibonacci (valorFinal) {
-if (valorFinal == 0){
-    return [0];
-    }
-if (valorFinal == 1){
-    return [0, 1];
-    }
+// function sequenciaFibonacci (valorFinal) {
+// if (valorFinal == 0){
+//     return [0];
+//     }
+// if (valorFinal == 1){
+//     return [0, 1];
+//     }
 
-let lista = [0,1]
-    for (i = 2; i <= valorFinal; i++) {
-        lista[i] = lista[i - 1]  + lista[i - 2]
-    }
-return lista
+// let lista = [0,1]
+//     for (i = 2; i <= valorFinal; i++) {
+//         lista[i] = lista[i - 1]  + lista[i - 2]
+//     }
+// return lista
 
-}
+// }
 
-const valorFinal = 8;
-const resultado = sequenciaFibonacci(valorFinal)
-console.log(`Segundo a sequência de Fibonacci, o valor de ${valorFinal} posições teve resultado de ${resultado}`) //retorna 9 posições pq seria de 0 a 8, ou seja, 9 elementos
+// const valorFinal = 8;
+// const resultado = sequenciaFibonacci(valorFinal)
+// console.log(`Segundo a sequência de Fibonacci, o valor de ${valorFinal} posições teve resultado de ${resultado}`) //retorna 9 posições pq seria de 0 a 8, ou seja, 9 elementos
 
 // Exercício 3: Crie uma função que receba um array de números e retorne apenas os números primos.
 
