@@ -54,6 +54,32 @@ console.log(`Segundo a sequência de Fibonacci, o valor de ${valorFinal} posiç�
 
 // Exercício 5: Crie uma classe Produto com atributos nome, preco e estoque. Adicione um método vender(quantidade) que diminui o estoque.
 
+class Produto{
+  constructor(nome, preco, estoque){
+    this.nome = nome
+    this.preco = preco
+    this.estoque = estoque
+  }
+
+  vender(quantidade){
+
+    if (quantidade === 0){
+      console.log(`Nao foi possível realizar a venda, estoque ${this.nome} está zerado!`)
+    }
+    else if(quantidade > this.estoque){
+      console.log(`Não foi possível realizar a venda, o estoque de ${this.nome} tem apenas ${this.estoque} itens!`)
+    }
+    else{
+    this.estoque = this.estoque - quantidade
+    console.log(`Após a venda, restaram ${this.estoque} unidades de ${this.nome} no estoque.`)
+    
+    }
+  }
+}
+
+const arroz = new Produto ("arroz", 12.50, 40)
+arroz.vender(50)
+
 // Exercício 6: Crie uma classe ContaEnergia que recebe consumoKwh e valorPorKwh. Adicione um método que calcula o valor total da conta.
 
 // Exercício 7: Crie uma classe Aluno com notas de 3 provas. Adicione um método media() que calcula a média e outro aprovado() que retorna se a média é maior ou igual a 7.
