@@ -107,7 +107,31 @@ contaMonica.valorConta()
 
 // Exercício 7: Crie uma classe Aluno com notas de 3 provas. Adicione um método media() que calcula a média e outro aprovado() que retorna se a média é maior ou igual a 7.
 
+class Aluno{
+  constructor(nota1, nota2, nota3){
+    this.nota1 = nota1
+    this.nota2 = nota2
+    this.nota3 = nota3
+  }
+  
+  media(){
+    if(this.nota1 < 0 ||this.nota2 < 0 || this.nota3 < 0 ){
+      console.log("Insira uma nota válida!")
+      }
+      
+    else{
+      let media = (this.nota1 + this.nota2 + this.nota3)/3
+      console.log(`A média desse aluno foi ${media}.`)
+    }
+    }
+  }
+  
+const monica = new Aluno(10, 9, 8)
+monica.media()
+
 // Exercício 8: Crie uma classe Cinema que tem nome, capacidade e ingressosVendidos. Adicione um método venderIngresso(qtd) que só permite vender se houver lugares disponíveis.
+
+
 
 // Exercício 9: Crie uma classe Biblioteca que armazena uma lista de livros. Adicione métodos adicionarLivro, removerLivro e listarLivros
 
