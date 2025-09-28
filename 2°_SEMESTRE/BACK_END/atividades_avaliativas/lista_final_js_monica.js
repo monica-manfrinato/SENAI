@@ -253,10 +253,6 @@
 
 // Exercício 11: Crie uma classe Banco que possua contas privadas. Cada conta deve ter número, titular e saldo. Adicione métodos abrirConta(titular, saldoInicial), consultarSaldo(numeroConta) e transferir(contaOrigem, contaDestino, valor).
 
-// Exercício 11: Crie uma classe Banco que possua contas privadas. 
-//Cada conta deve ter número, titular e saldo. 
-//Adicione métodos abrirConta(titular, saldoInicial), consultarSaldo(numeroConta) e 
-//transferir(contaOrigem, contaDestino, valor).
 
 // class Banco {
   
@@ -350,12 +346,6 @@
 // - Estagiario (desconta 5% de vale transporte).
 // Implemente o método calcularSalarioLiquido() em cada subclasse.
 
-// Exercício 14: Crie uma classe Funcionario com atributos nome e salarioBase. Depois crie subclasses:
-// - FuncionarioCLT (desconta 10% de imposto do salário + 5% de comissão).
-// - FuncionarioPJ (sem desconto).
-// - Estagiario (desconta 5% de vale transporte).
-// Implemente o método calcularSalarioLiquido() em cada subclasse.
-
 // class Funcionario {
 //   constructor(nome, salarioBase){
 //     this.nome = nome
@@ -403,13 +393,6 @@
   
 
 // Exercício 15: Crie uma classe Investimento com um método calcularRendimento(valor, meses).Depois crie subclasses:
-// - RendaFixa (rende 0,7% ao mês).
-// - CDB (rende 1% ao mês, mas cobra 15% de imposto sobre o lucro).
-// - Acao (rende valores aleatórios entre -5% e +10% ao mês).
-// Implemente o cálculo mês a mês.
-
-// Exercício 15: Crie uma classe Investimento com um método calcularRendimento(valor, meses).
-//Depois crie subclasses:
 // - RendaFixa (rende 0,7% ao mês).
 // - CDB (rende 1% ao mês, mas cobra 15% de imposto sobre o lucro).
 // - Acao (rende valores aleatórios entre -5% e +10% ao mês).
