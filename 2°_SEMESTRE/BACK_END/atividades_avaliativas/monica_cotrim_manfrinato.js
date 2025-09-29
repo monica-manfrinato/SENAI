@@ -120,7 +120,55 @@
 // Caminhão suporta até 8.000 kg por eixo.
 // Exemplo: um caminhão com 2 eixos pode transportar até 16.000 kg
 
+class Veiculos{
 
+    constructor(placa, capacidade){
+        this.placa = placa
+        this.capacidade = capacidade
+    }
+}
+
+class Caminhao extends Veiculos{
+    constructor(placa, capacidade, eixos, motorista){
+        super(placa, capacidade)
+        this.eixos = eixos
+        this.motorista = motorista
+    }
+
+
+    podeTransportar(carga){
+
+        let capacidadeTotal = this.capacidade*this.eixos
+        if (carga <= capacidadeTotal){
+            console.log(`O caminhão de ${this.motorista} vai conseguir carregar ${carga}kg.`)
+        }
+        else{console.log(`O caminhão de ${this.motorista} não suporta ${carga}kg.`)}
+    }
+}
+
+
+class Van extends Veiculos{
+    constructor(placa, capacidade, motorista){
+        super(placa, capacidade)
+        this.motorista = motorista
+    }
+
+
+    podeTransportar(carga){
+
+    
+        if (carga <= this.capacidade){
+            console.log(`A van de ${this.motorista} vai conseguir levar ${carga}kg.`)
+        }
+        else{console.log(`A van de ${this.motorista} não suporta ${carga}kg.`)}
+    }
+}
+
+caminhaoMonica = new Caminhao('123-ABC', 8000, 4, 'Mônica')
+caminhaoMonica.podeTransportar(30000)
+
+vanMonica = new Van('123-ABC', 5000, 'Mônica')
+vanMonica.podeTransportar(7000)
 
 // Exercício 5:Crie uma classe Funcionario com os atributos:
 // nome
