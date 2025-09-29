@@ -45,9 +45,50 @@
 
 // Exercício 3: Crie uma função que receba um array de números e retorne apenas os números primos.
 
+function filtrarLista (lista, callback)
+{
+    // lista.forEach(i => //no foreach o i é cada elemento, assumindo o valor de cada posição
+    // { 
+    //     if (callback(i))
+    //     {
+    //         console.log(i)
+    //     }        
+    // });
+
+    for(let i = 0; i < lista.length; i++){
+        if(callback (lista[i])){
+            console.log(lista[i])
+        }
+    };
+}
+
+function primo (numero) {
+
+    if (numero < 2)
+     {
+        return false
+     }
+    
+    for (let i = 2; i < numero; i++)
+    {
+        if(numero%i == 0)
+            {
+            return false
+        }
+        
+        return true //não precisa colocar o else pq se não entrou na condição já vai seguir com oq estiver embaixo
+        
+    }
+}
+
+filtrarLista(lista = [0,2,3,7,9], primo) //quando chama a função de callback, não precisa colocar o parâmetro dela
+
 // Exercício 4: Escreva uma função que receba uma string e retorne se ela é um palíndromo (mesmo de trás para frente).
 
+function palindromo(string)
+{
 
+}
 
 //Parte 2: Classes simples//////////////////////////////////////////////////////////////////////////////////////////////////
 
