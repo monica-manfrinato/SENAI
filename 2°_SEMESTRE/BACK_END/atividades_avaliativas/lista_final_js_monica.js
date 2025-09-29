@@ -45,43 +45,43 @@
 
 // Exercício 3: Crie uma função que receba um array de números e retorne apenas os números primos.
 
-function filtrarLista (lista, callback)
-{
-    // lista.forEach(i => //no foreach o i é cada elemento, assumindo o valor de cada posição
-    // { 
-    //     if (callback(i))
-    //     {
-    //         console.log(i)
-    //     }        
-    // });
+// function filtrarLista (lista, callback)
+// {
+//     // lista.forEach(i => //no foreach o i é cada elemento, assumindo o valor de cada posição
+//     // { 
+//     //     if (callback(i))
+//     //     {
+//     //         console.log(i)
+//     //     }        
+//     // });
 
-    for(let i = 0; i < lista.length; i++){
-        if(callback (lista[i])){ // o 'callback' serve só como parametro, ou seja, na definição la embaixo, pra acessar ele, vai ser colocar o nome da função que realmente precisa estar nas possições determinadas pelo termo 'callback'
-            console.log(lista[i])
-        }
-    };
-}
+//     for(let i = 0; i < lista.length; i++){
+//         if(callback (lista[i])){ // o 'callback' serve só como parametro, ou seja, na definição la embaixo, pra acessar ele, vai ser colocar o nome da função que realmente precisa estar nas possições determinadas pelo termo 'callback'
+//             console.log(lista[i])
+//         }
+//     };
+// }
 
-function primo (numero) {
+// function primo (numero) {
 
-    if (numero < 2)
-     {
-        return false
-     }
+//     if (numero < 2)
+//      {
+//         return false
+//      }
     
-    for (let i = 2; i < numero; i++)
-    {
-        if(numero%i == 0)
-            {
-            return false
-        }
+//     for (let i = 2; i < numero; i++)
+//     {
+//         if(numero%i == 0)
+//             {
+//             return false
+//         }
         
-        return true //não precisa colocar o else pq se não entrou na condição já vai seguir com oq estiver embaixo
+//         return true //não precisa colocar o else pq se não entrou na condição já vai seguir com oq estiver embaixo
         
-    }
-}
+//     }
+// }
 
-filtrarLista(lista = [0,2,3,7,9], primo) //quando chama a função de callback, não precisa colocar o parâmetro dela
+// filtrarLista(lista = [0,2,3,7,9], primo) //quando chama a função de callback, não precisa colocar o parâmetro dela
 
 // Exercício 4: Escreva uma função que receba uma string e retorne se ela é um palíndromo (mesmo de trás para frente).
 
@@ -372,7 +372,56 @@ function palindromo(string)
 
 // Exercício 12: Crie uma classe Pedido que armazena uma lista privada de itens (nome do produto e valor). Adicione métodos adicionarItem, removerItem e calcularTotal.
 
+class Pedido{
+    #produto
+    #valor
+    constructor(produto, valor){
+        this.#produto
+        this.#valor
+    }
+}
+
 // Exercício 13: Crie uma classe UsuarioSistema com atributos privados login e senha. Adicione métodos autenticar(login, senha) e alterarSenha(senhaAntiga, senhaNova).
+
+// class UsuarioSistema{
+//     #login
+//     #senha
+//     constructor(login, senha){
+//         this.#login = login
+//         this.#senha = senha
+//     }
+
+//     autenticar(login, senha){
+//         if (login == this.#login && senha == this.#senha){
+//             return 'Perfil autenticado!'
+//         }
+//         else{
+//             return 'Login ou senha errada!'
+//         }
+
+//     }
+
+
+//     alterarSenha(senhaAntiga, senhaNova){
+//         if (this.#senha = senhaAntiga){
+//             this.#senha = senhaNova
+//             return 'A senha foi alterada!'
+//         }
+//         else{
+//             return 'Senha incorreta, alteração não foi concluída!'
+//         }
+
+//     }
+// }
+
+// const Monica = new UsuarioSistema ('Monica' ,123)
+
+// console.log(Monica.autenticar('Monica', 123))
+// console.log(Monica.autenticar('Lucas', 123))
+
+// console.log(Monica.alterarSenha(123, 321))
+// console.log(Monica.autenticar('Monica', 123))
+// console.log(Monica.autenticar('Monica', 321))
 
 
 
@@ -496,6 +545,68 @@ function palindromo(string)
 // - ISS (5% sobre o valor).
 // - IRPF (progressivo: até 2000 = isento, de 2001 até 5000 = 15%, acima de 5000 = 27,5%).
 // Implemente um sistema que receba uma lista de impostos diferentes e calcule os valores para um mesmo valor base.
+
+class Imposto{
+    constructor(nome, valor){
+        this.nome = nome
+        this.valor = valor
+    }
+    calcular(nome, valor){}
+}
+
+
+class ICMS extends Imposto{
+        constructor(nome, valor){
+            super(nome,valor)
+    }
+    calcular(nome, valor){
+        let imposto = valor*0.18
+        let valorImposto = valor + imposto
+        return valorImposto  
+    }
+}
+
+class ISS extends Imposto{
+        constructor(nome, valor){
+            super(nome,valor)
+    }
+    calcular(nome, valor){
+        let imposto = valor*0.05
+        let valorImposto = valor + imposto
+        return valorImposto  
+    }
+}
+
+class IRPF extends Imposto{
+        constructor(nome, valor){
+            super(nome,valor)
+    }
+    calcular(nome,valor){
+        if(valor <=0){
+            return 'Insira um valor válido'
+        }
+        else if(valor <= 2000){
+            return valor
+        }
+        else if (valor >= 2001 && valor < 5000){
+            return valor*1.15
+        }
+        else{
+            return valor*1.275
+        }
+    }
+}
+
+monica = new ISS ('ISS', 2000)
+rafael = new IRPF ('IRPF', 2000)
+paula = new ISS ('ISS', 2000)
+davi = new ICMS ('ICMS', 2000)
+lucas = new IRPF ('IRPF', 2000)
+
+
+let impostos = [monica, rafael, paula, davi, lucas]
+impostos.forEach(i => console.log (`O imposto de ${i.nome} é de ${i.calcular()} reais`));
+
 
 // Exercício 17: Crie uma classe AplicacaoFinanceira com método simular(valor, meses).Depois crie subclasses:
 // - Poupanca (0,6% ao mês).
