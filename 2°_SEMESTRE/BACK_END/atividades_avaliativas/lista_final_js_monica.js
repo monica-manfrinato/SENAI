@@ -243,54 +243,51 @@ function palindromo(string)
 
 // Exercício 10: Crie uma classe Cofrinho que armazena valores de moedas e notas em um atributo privado. Adicione métodos depositar(valor), retirar(valor) e saldo().
 
-// class Cofrinho{
-//   #moedas
-//   #notas
-//   constructor(moedas, notas){
-//     this.#moedas = moedas
-//     this.#notas = notas
-//   }
+class Cofrinho{
+  #moedas
+  #notas
+  constructor(moedas, notas){
+    this.#moedas = moedas
+    this.#notas = notas
+  }
   
-//   depositar(qtdMoedas, qtdNotas){
+  depositar(qtdMoedas, qtdNotas){
+    this.#moedas += qtdMoedas
+    this.#notas += qtdNotas
+  }
+  
+  retirar(qtdMoedas, qtdNotas){
+    if (qtdMoedas > this.#moedas || qtdNotas > this.#notas) {
+      console.log(`Não foi possível retirar ${qtdMoedas} moedas e ${qtdNotas} notas`)
+      console.log(`Saldo atual: ${this.#moedas} moedas e ${this.#notas} notas`)
+    }
+
+    else{
+    this.#moedas -= qtdMoedas
+    this.#notas -= qtdNotas
+    console.log(`Foram retiradas ${qtdMoedas} moedas e ${qtdNotas} notas`)
+    console.log(`Restaram ${this.#moedas} moedas e ${this.#notas} notas`)
+    }
+
     
-//     this.#moedas += qtdMoedas
-//     this.#notas += qtdNotas
-//   }
+  }
   
-//   retirar(qtdMoedas, qtdNotas){
+  get saldo(){
+    console.log(`=== SALDO DO COFRINHO ===`)
+    console.log(`Moedas: ${this.#moedas}`)
+    console.log(`Notas: ${this.#notas}`)
 
-//     if (qtdMoedas > this.#moedas || qtdNotas > this.#notas) {
-//       console.log(`Não foi possível retirar ${qtdMoedas} moedas e ${qtdNotas} notas`)
-//       console.log(`Saldo atual: ${this.#moedas} moedas e ${this.#notas} notas`)
-//     }
-//     else{
-//     this.#moedas -= qtdMoedas
-//     this.#notas -= qtdNotas
-//     console.log(`Foram retiradas ${qtdMoedas} moedas e ${qtdNotas} notas`)
-//     console.log(`Restaram ${this.#moedas} moedas e ${this.#notas} notas`)
-//     }
-
-    
-//   }
+  }
+}
   
-//   get saldo(){
-//     console.log(`=== SALDO DO COFRINHO ===`)
-//     console.log(`Moedas: ${this.#moedas}`)
-//     console.log(`Notas: ${this.#notas}`)
+const cofrinhoMonica = new Cofrinho(5, 5)
 
-//   }
-// }
-  
-// const cofrinhoMonica = new Cofrinho(5, 5)
-// cofrinhoMonica.depositar(10, 5)
+cofrinhoMonica.depositar(10, 5)
+cofrinhoMonica.saldo //adicionei 10 e 5 então fica 15 e 10
+cofrinhoMonica.retirar(3, 2)
+cofrinhoMonica.saldo //retirei 3 e 2 então fica 12 e 8
+cofrinhoMonica.retirar(20, 10) //erro pois não há saldo o suficiente para retirar essa quantidade de notas e moedas
 
-// cofrinhoMonica.saldo //adicionei 10 e 5 então fica 15 e 10
-
-// cofrinhoMonica.retirar(3, 2)
-
-// cofrinhoMonica.saldo //retirei 3 e 2 então fica 12 e 8
-
-// cofrinhoMonica.retirar(20, 10) //erro pois não há saldo o suficiente para retirar essa quantidade de notas e moedas
 
 // Exercício 11: Crie uma classe Banco que possua contas privadas. Cada conta deve ter número, titular e saldo. Adicione métodos abrirConta(titular, saldoInicial), consultarSaldo(numeroConta) e transferir(contaOrigem, contaDestino, valor).
 
