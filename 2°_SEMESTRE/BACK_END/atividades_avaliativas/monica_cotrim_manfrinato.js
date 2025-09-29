@@ -1,15 +1,4 @@
-// Exercício 1:Crie uma função verificarEstoque(produto, quantidade, callback) que:
-// Receba o nome do produto e a quantidade solicitada;
-// Use o callback para verificar se a quantidade está disponível no estoque.
-// Retorne "Pedido aprovado" se tiver estoque suficiente ou "Estoque insuficiente" caso contrário.
-// Para simular um banco de dados utilize:
-//           // "Banco de dados" de estoque
-//           const estoque = {
-//             caixa: 50,
-//             palete: 10,
-//             empilhadeira: 2
-//           };
-// Para utilizar a quantidade de produtos em estoque utilize: estoque[produto]
+// Exercício 1:
 
 // const estoque = {
 // caixa: 50,
@@ -19,32 +8,29 @@
 
 // function verificarEstoque(produto, quantidade,callback)
 // {
-//     if(callback(produto) == false)
-//     {
-//         console.log('')
+//     if(callback(produto, quantidade)){
+//         return 'Pedido aprovado'
 //     }
+//     else{
+//         return 'Estoque Insuficiente'
+//     }
+    
 // }
 
 
-// function disponivelEstoque(produto,estoque)
+// function disponivelEstoque(produto,quantidade)
 // {
-
+// if (quantidade <= estoque[produto] ){
+//     return true
+// }
+// else{ return false}
 
 // }
 
+// console.log(verificarEstoque('caixa' , 60, disponivelEstoque))
 
-// if estoque.caixa != quantidade
 
-
-// Exercício 2:Classe Simples – Produto
-
-// Crie uma classe Produto com os atributos:
-// nome (string)
-// preco (number)
-// quantidade (number)
-// Implemente os métodos:
-// valorTotal() → retorna o valor total do estoque do produto (preço × quantidade).
-// reporEstoque(qtd) → aumenta a quantidade em estoque do produto.
+// Exercício 2:
 
 // class Produto {
 
@@ -68,15 +54,12 @@
 
 // let arroz = new Produto('Arroz', 30, 30)
 // arroz.valorTotal()
-// arroz.reporEstoque(5)
+// arroz.reporEstoque(10)
+// arroz.valorTotal()
 
 
 
-// Exercício 3:Na área de almoxarifado, cada pedido feito para o fornecedor contém um produto por vez,  O sistema precisa registrar o número do pedido, o nome do produto solicitado, o preço unitário do produto e a quantidade solicitada.
-
-// O supervisor explicou que precisa:
-// Calcular o valor total do pedido (preço × quantidade).
-// Emitir um resumo contendo o número do pedido, nome do produto, quantidade e valor total.
+// Exercício 3:
 
 // class Pedido {
 //     constructor(num_pedido,nome, preco, quantidade){
@@ -88,7 +71,7 @@
 
 //     valorTotal(){
 //         let total = this.preco*this.quantidade
-//         console.log(`O valor total do pedido foi de ${total} reais`)
+//         // console.log(`O valor total do pedido foi de ${total} reais`)
 //         return total
 //     }
     
@@ -105,86 +88,140 @@
 // }
 
 // let travesseiro = new Pedido (121, 'travesseiro', 40, 4)
-// travesseiro.valorTotal()
+// console.log(`O valor total do pedido foi de ${travesseiro.valorTotal()} reais`)
 // travesseiro.emissaoResumo()
 
 
-// Exercício 4:Crie uma classe Veiculo com atributos:
-// placa
-// capacidade (em kg)
-// Depois crie duas subclasses:
-// Caminhao → adiciona atributo eixos e motorista.
-// Van → adiciona atributo motorista.
-// Cada subclasse deve implementar o método podeTransportar(carga) que verifica se o veículo consegue realizar a viagem:
-// Van suporta até 5.000 kg.
-// Caminhão suporta até 8.000 kg por eixo.
-// Exemplo: um caminhão com 2 eixos pode transportar até 16.000 kg
+// Exercício 4:
 
-class Veiculos{
+// class Veiculos{
 
-    constructor(placa, capacidade){
-        this.placa = placa
-        this.capacidade = capacidade
-    }
-}
+//     constructor(placa, capacidade){
+//         this.placa = placa
+//         this.capacidade = capacidade
+//     }
+// }
 
-class Caminhao extends Veiculos{
-    constructor(placa, capacidade, eixos, motorista){
-        super(placa, capacidade)
-        this.eixos = eixos
-        this.motorista = motorista
-    }
+// class Caminhao extends Veiculos{
+//     constructor(placa, capacidade, eixos, motorista){
+//         super(placa, capacidade)
+//         this.eixos = eixos
+//         this.motorista = motorista
+//     }
 
 
-    podeTransportar(carga){
+//     podeTransportar(carga){
 
-        let capacidadeTotal = this.capacidade*this.eixos
-        if (carga <= capacidadeTotal){
-            console.log(`O caminhão de ${this.motorista} vai conseguir carregar ${carga}kg.`)
-        }
-        else{console.log(`O caminhão de ${this.motorista} não suporta ${carga}kg.`)}
-    }
-}
-
-
-class Van extends Veiculos{
-    constructor(placa, capacidade, motorista){
-        super(placa, capacidade)
-        this.motorista = motorista
-    }
+//         let capacidadeTotal = this.capacidade*this.eixos
+//         if (carga <= capacidadeTotal){
+//             console.log(`O caminhão de ${this.motorista} vai conseguir carregar ${carga}kg.`)
+//         }
+//         else{console.log(`O caminhão de ${this.motorista} não suporta ${carga}kg.`)}
+//     }
+// }
 
 
-    podeTransportar(carga){
+// class Van extends Veiculos{
+//     constructor(placa, capacidade, motorista){
+//         super(placa, capacidade)
+//         this.motorista = motorista
+//     }
+
+
+//     podeTransportar(carga){
 
     
-        if (carga <= this.capacidade){
-            console.log(`A van de ${this.motorista} vai conseguir levar ${carga}kg.`)
-        }
-        else{console.log(`A van de ${this.motorista} não suporta ${carga}kg.`)}
-    }
-}
+//         if (carga <= this.capacidade){
+//             console.log(`A van de ${this.motorista} vai conseguir levar ${carga}kg.`)
+//         }
+//         else{console.log(`A van de ${this.motorista} não suporta ${carga}kg.`)}
+//     }
+// }
 
-caminhaoMonica = new Caminhao('123-ABC', 8000, 4, 'Mônica')
-caminhaoMonica.podeTransportar(30000)
+// caminhaoMonica = new Caminhao('123-ABC', 8000, 4, 'Mônica')
+// caminhaoMonica.podeTransportar(30000)
 
-vanMonica = new Van('123-ABC', 5000, 'Mônica')
-vanMonica.podeTransportar(7000)
+// vanMonica = new Van('123-ABC', 5000, 'Mônica')
+// vanMonica.podeTransportar(7000)
 
-// Exercício 5:Crie uma classe Funcionario com os atributos:
-// nome
-// salarioBase
-// E um método calcularSalario().
+// Exercício 5:
 
-// Crie subclasses:
-// OperadorDeEmpilhadeira → recebe adicional de 10% sobre o salário base.
-// GerenteDeLogistica → recebe adicional fixo de R$ 2.000,00.
-// Simule um array com 5 funcionários diferentes e exiba os salários calculados utilizando for, demonstrando o polimorfismo em ação.
+// class Funcionario {
+//     constructor(nome, salarioBase){
+//         this.nome = nome
+//         this.salarioBase = salarioBase
+//     }
+
+//     calcularSalario(){}
+// }
 
 
+// class OperadorDeEmpilhadeira extends Funcionario{
+//     constructor(nome, salarioBase){
+//         super(nome, salarioBase)
+//     }
 
-// Exercício 6:Crie uma classe Almoxarifado que armazene um atributo privado #quantidade e o nome de um produto.
+//     calcularSalario(){
+//         let novoSalario = this.salarioBase*1.1
+//         return novoSalario
+//     }
+// }
 
-// Implemente os métodos:
-// adicionarProduto(nome, qtd)
-// retirarProduto(nome, qtd) (não permitir retirar mais do que existe)
-// consultarEstoque() (retorna todos os produtos e quantidades).
+
+// class GerenteDeLogistica extends Funcionario{
+//     constructor(nome, salarioBase){
+//         super(nome, salarioBase)
+//     }
+//     calcularSalario(){
+//         let novoSalario = this.salarioBase + 2000
+//         return novoSalario
+//     }}
+
+// monica = new GerenteDeLogistica('Mônica', 2000)
+// rafael = new GerenteDeLogistica('Rafael', 2000)
+// paula = new OperadorDeEmpilhadeira('Paula', 2000)
+// davi = new GerenteDeLogistica('Davi', 2000)
+// lucas = new OperadorDeEmpilhadeira('Lucas', 2000)
+
+// let funcionarios = [monica, rafael, paula, davi, lucas]
+// funcionarios.forEach(i => console.log (`O salário de ${i.nome} é de ${i.calcularSalario()} reais`));
+
+
+// Exercício 6://///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// class Almoxarifado{
+//     #quantidade
+//     constructor(quantidade, nome){
+//         this.#quantidade = quantidade
+//         this.nome = nome
+//     }
+
+//     adicionarProduto (qtd){
+//         this.#quantidade += qtd
+//     }
+
+
+//     retirarProduto (qtd){
+
+//         if (qtd > this.#quantidade){
+//             return `Não foi possível retirar ${qtd} unidades de ${this.nome}, pois o estoque tem apenas ${this.#quantidade}unidades.`
+//         }
+//         else{
+//             this.#quantidade -= qtd
+//             console.log(`O estoque tem apenas ${this.#quantidade} unidades de ${this.nome} após a retirada`)
+//         }
+//     }
+
+
+//     consultarEstoque(){
+//         console.log(`=== ESTOQUE ===`)
+//         console.log(`${this.nome}: ${this.#quantidade}`)
+
+//     }
+// }
+
+// bolaVolei = new Almoxarifado(6, 'Bola de Vôlei')
+// bolaVolei.adicionarProduto(4)
+// bolaVolei.consultarEstoque()
+// bolaVolei.retirarProduto(2)
+// bolaVolei.consultarEstoque()
