@@ -33,7 +33,7 @@
 // }
 
 
-
+// if estoque.caixa != quantidade
 
 
 // Exercício 2:Classe Simples – Produto
@@ -56,12 +56,12 @@
 
 //     valorTotal(){
 //         let totalEstoque = this.preco*this.quantidade
-//         return console.log(`Tendo ${this.quantidade} unidades de ${this.nome}, o valor total foi de ${totalEstoque} reais`)
+//         console.log(`Tendo ${this.quantidade} unidades de ${this.nome}, o valor total foi de ${totalEstoque} reais`)
 //     }
 
 //     reporEstoque(qtd){
 //         this.quantidade += qtd
-//         return console.log(`O estoque agora tem ${this.quantidade} unidades de ${this.nome}.`)
+//         console.log(`O estoque agora tem ${this.quantidade} unidades de ${this.nome}.`)
 //     }
 
 // }
@@ -72,12 +72,41 @@
 
 
 
-// Exercício 3:Na área de almoxarifado, cada pedido feito para o fornecedor contém um produto por vez, informado no momento da solicitação. O sistema precisa registrar o número do pedido, o nome do produto solicitado, o preço unitário do produto e a quantidade solicitada.
+// Exercício 3:Na área de almoxarifado, cada pedido feito para o fornecedor contém um produto por vez,  O sistema precisa registrar o número do pedido, o nome do produto solicitado, o preço unitário do produto e a quantidade solicitada.
 
 // O supervisor explicou que precisa:
 // Calcular o valor total do pedido (preço × quantidade).
 // Emitir um resumo contendo o número do pedido, nome do produto, quantidade e valor total.
 
+// class Pedido {
+//     constructor(num_pedido,nome, preco, quantidade){
+//         this.num_pedido = num_pedido
+//         this.nome = nome
+//         this.preco = preco
+//         this.quantidade = quantidade
+//     }
+
+//     valorTotal(){
+//         let total = this.preco*this.quantidade
+//         console.log(`O valor total do pedido foi de ${total} reais`)
+//         return total
+//     }
+    
+//     emissaoResumo(){
+        
+//         console.log('===== RESUMO PEDIDO =====')
+//         console.log(`
+// Número do pedido: ${this.num_pedido}
+// Produto: ${this.nome}
+// Quantidade: ${this.quantidade}
+// Valor total: ${this.valorTotal()}`)
+        
+//     }
+// }
+
+// let travesseiro = new Pedido (121, 'travesseiro', 40, 4)
+// travesseiro.valorTotal()
+// travesseiro.emissaoResumo()
 
 
 // Exercício 4:Crie uma classe Veiculo com atributos:
