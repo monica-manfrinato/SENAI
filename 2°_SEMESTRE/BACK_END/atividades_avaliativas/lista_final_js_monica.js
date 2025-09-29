@@ -56,7 +56,7 @@ function filtrarLista (lista, callback)
     // });
 
     for(let i = 0; i < lista.length; i++){
-        if(callback (lista[i])){
+        if(callback (lista[i])){ // o 'callback' serve só como parametro, ou seja, na definição la embaixo, pra acessar ele, vai ser colocar o nome da função que realmente precisa estar nas possições determinadas pelo termo 'callback'
             console.log(lista[i])
         }
     };
