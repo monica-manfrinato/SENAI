@@ -18,17 +18,18 @@ hora TIME
 CREATE TABLE autor(
 id_autor INTEGER,
 nome VARCHAR(50),
-id_postagem INTEGER,
-conteudo VARCHAR(500),
-data_comentario DATE,
-hora TIME
+email VARCHAR(100)
 );
 
-CREATE TABLE comentario(
-id_comentario INTEGER,
-id_autor INTEGER,
+CREATE TABLE postagem(
 id_postagem INTEGER,
+id_autor INTEGER,
 conteudo VARCHAR(500),
-data_comentario DATE,
-hora TIME
+data_postagem DATE,
+hora TIME,
+titulo VARCHAR(50)
 );
+
+drop table comentario;
+drop table autor;
+drop table postagem;
