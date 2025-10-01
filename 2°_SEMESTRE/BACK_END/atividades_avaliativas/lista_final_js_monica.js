@@ -85,10 +85,8 @@
 
 // Exercício 4: Escreva uma função que receba uma string e retorne se ela é um palíndromo (mesmo de trás para frente).
 
-function palindromo(string)
-{
+function palindromo(string) {}
 
-}
 
 //Parte 2: Classes simples//////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -373,12 +371,13 @@ function palindromo(string)
 // Exercício 12: Crie uma classe Pedido que armazena uma lista privada de itens (nome do produto e valor). Adicione métodos adicionarItem, removerItem e calcularTotal.
 
 class Pedido{
-    #produto
-    #valor
-    constructor(produto, valor){
-        this.#produto
-        this.#valor
-    }
+ #itens = []
+
+adicionarItem(nome, valor){}
+
+removerItem(nome, valor){}
+
+calcularTotal(){}
 }
 
 // Exercício 13: Crie uma classe UsuarioSistema com atributos privados login e senha. Adicione métodos autenticar(login, senha) e alterarSenha(senhaAntiga, senhaNova).
@@ -546,66 +545,66 @@ class Pedido{
 // - IRPF (progressivo: até 2000 = isento, de 2001 até 5000 = 15%, acima de 5000 = 27,5%).
 // Implemente um sistema que receba uma lista de impostos diferentes e calcule os valores para um mesmo valor base.
 
-class Imposto{
-    constructor(nome, valor){
-        this.nome = nome
-        this.valor = valor
-    }
-    calcular(nome, valor){}
-}
+// class Imposto{
+//     constructor(nome, valor){
+//         this.nome = nome
+//         this.valor = valor
+//     }
+//     calcular(nome, valor){}
+// }
 
 
-class ICMS extends Imposto{
-        constructor(nome, valor){
-            super(nome,valor)
-    }
-    calcular(nome, valor){
-        let imposto = valor*0.18
-        let valorImposto = valor + imposto
-        return valorImposto  
-    }
-}
+// class ICMS extends Imposto{
+//         constructor(nome, valor){
+//             super(nome,valor)
+//     }
+//     calcular(nome, valor){
+//         let imposto = valor*0.18
+//         let valorImposto = valor + imposto
+//         return `Aplicando o imposto ${nome}, o novo valor será de ${valorImposto} reais` 
+//     }
+// }
 
-class ISS extends Imposto{
-        constructor(nome, valor){
-            super(nome,valor)
-    }
-    calcular(nome, valor){
-        let imposto = valor*0.05
-        let valorImposto = valor + imposto
-        return valorImposto  
-    }
-}
+// class ISS extends Imposto{
+//         constructor(nome, valor){
+//             super(nome,valor)
+//     }
+//     calcular(nome, valor){
+//         let imposto = valor*0.05
+//         let valorImposto = valor + imposto
+//         return `Aplicando o imposto ${nome}, o novo valor será de ${valorImposto} reais` 
+//     }
+// }
 
-class IRPF extends Imposto{
-        constructor(nome, valor){
-            super(nome,valor)
-    }
-    calcular(nome,valor){
-        if(valor <=0){
-            return 'Insira um valor válido'
-        }
-        else if(valor <= 2000){
-            return valor
-        }
-        else if (valor >= 2001 && valor < 5000){
-            return valor*1.15
-        }
-        else{
-            return valor*1.275
-        }
-    }
-}
+// class IRPF extends Imposto{
+//         constructor(nome, valor){
+//             super(nome,valor)
+//     }
+//     calcular(nome, valor){
+//         if(valor <=0){
+//             return 'Insira um valor válido'
+//         }
+//         else if(valor <= 2000){
+//             return `Como o valor é abaixo do mínimo, o imposto ${nome}, não alterou o valor final (Continua sendo de ${valor})` 
+//         }
+//         else if (valor >= 2001 && valor < 5000){
+//             return `Aplicando o imposto ${nome}, o novo valor será de ${valor*1.15} reais` 
+//         }
+//         else{
+//             return `Aplicando o imposto ${nome}, o novo valor será de ${valor*1.275} reais` 
+//         }
+//     }
+// }
 
-monica = new ISS ('ISS', 2000)
-rafael = new IRPF ('IRPF', 2000)
-paula = new ISS ('ISS', 2000)
-davi = new ICMS ('ICMS', 2000)
-lucas = new IRPF ('IRPF', 2000)
+// monica = new ISS ('ISS', 2000)
+// rafael = new IRPF ('IRPF', 2000)
+// paula = new ISS ('ISS', 2000)
+// davi = new ICMS ('ICMS', 2000)
+// lucas = new IRPF ('IRPF', 2000)
 
 
-let impostos = [monica, rafael, paula, davi, lucas]
-impostos.forEach(i => console.log (`O imposto de ${i.nome} é de ${i.calcular()} reais`));
+// let impostos = [monica, rafael, paula, davi, lucas]
+// impostos.forEach(i => console.log(i.calcular(i.nome, i.valor))); //precisa colocar o i.valor e i.nome dentro, pq se não ele ficasem argumento pra usar
 
 
 // Exercício 17: Crie uma classe AplicacaoFinanceira com método simular(valor, meses).Depois crie subclasses:
@@ -613,3 +612,62 @@ impostos.forEach(i => console.log (`O imposto de ${i.nome} é de ${i.calcular()}
 // - TesouroDireto (0,8% ao mês, mas cobra 10% de IR sobre o lucro).
 // - Criptomoeda (variação aleatória entre -20% e +25% ao mês).
 // Implemente um sistema que crie várias aplicações e compare o rendimento após 12 meses.
+
+// class AplicacaoFinanceira{
+//     constructor(valor, meses){
+//         this.valor = valor
+//         this.meses = meses
+//     }
+//     simular(valor, meses){
+//         //montante (soma do juros com o valor inicial) = C.(1 + i)**t
+//     }
+// }
+
+
+// class Poupanca extends AplicacaoFinanceira{
+//     constructor(valor, meses){
+//         super(valor, meses)
+//     }
+//     simular(){
+//         //montante (soma do juros com o valor inicial) = C.(1 + i)**t
+//         let montante = this.valor*(1 + 0.006)**this.meses
+//         return `O total após ${this.meses} meses utilizando aplicação financeira foi de ${montante.toFixed(2)}`
+//     }
+// }
+// class TesouroDireto extends AplicacaoFinanceira{
+//     constructor(valor, meses){
+//         super(valor, meses)
+//     }
+//     simular(){
+//         //montante (soma do juros com o valor inicial) = C.(1 + i)**t
+//         //TesouroDireto (0,8% ao mês, mas cobra 10% de IR sobre o lucro)
+//         let montante = this.valor*(1 + 0.008)**this.meses
+//         let juros = montante - this.valor
+//         let jurosFinal = juros - juros*0.10
+//         return `O total após ${this.meses} meses utilizando aplicação financeira foi de ${this.valor + jurosFinal.toFixed(2)}`
+//     }
+// }
+// class Criptomoeda extends AplicacaoFinanceira{
+//     constructor(valor, meses){
+//         super(valor, meses)
+//     }
+//     simular(){
+//         //montante (soma do juros com o valor inicial) = C.(1 + i)**t
+//         // - Criptomoeda (variação aleatória entre -20% e +25% ao mês).
+//         let montante = this.valor
+//         for(let mes = 1; mes <= this.meses; mes++){
+//             let variacao = (Math.random() * 45 - 20) / 100 // entre -20% e +25%
+//             montante = montante * (1 + variacao)
+//         }
+//         return `O total após ${this.meses} meses utilizando aplicação financeira foi de ${montante.toFixed(2)}`
+//     }
+//   }
+
+
+// const investidor1 = new Poupanca (50, 12)
+// const investidor2 = new TesouroDireto (50,12)
+// const investidor3 = new Criptomoeda (50, 12)
+
+// console.log(investidor1.simular())
+// console.log(investidor2.simular())
+// console.log(investidor3.simular())
