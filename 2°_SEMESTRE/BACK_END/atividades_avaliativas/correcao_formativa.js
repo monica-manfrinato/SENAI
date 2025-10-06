@@ -1,33 +1,33 @@
 // Exercício 1:
 
-// const estoque = {
-// caixa: 50,
-// palete: 10,
-// empilhadeira: 2
-// };
+const estoque = {
+caixa: 50,
+palete: 10,
+empilhadeira: 2
+};
 
-// function verificarEstoque(produto, quantidade,callback)
-// {
-//     if(callback(produto, quantidade)){
-//         return 'Pedido aprovado'
-//     }
-//     else{
-//         return 'Estoque Insuficiente'
-//     }
+function verificarEstoque(produto, quantidade,callback)
+{
+    if(callback(produto, quantidade)){
+        return 'Pedido aprovado'
+    }
+    else{
+        return 'Estoque Insuficiente'
+    }
     
-// }
+}
 
 
-// function disponivelEstoque(produto,quantidade)
-// {
-// if (quantidade <= estoque[produto] ){
-//     return true
-// }
-// else{ return false}
+function disponivelEstoque(produto,quantidade)
+{
+if (quantidade <= estoque[produto] ){
+    return true
+}
+else{ return false}
 
-// }
+}
 
-// console.log(verificarEstoque('caixa' , 60, disponivelEstoque))
+console.log(verificarEstoque('caixa' , 10, disponivelEstoque))
 
 
 // Exercício 2:
@@ -430,40 +430,40 @@
 
 // Exercício 6:
 
-class Almoxarifado{
-    #quantidade
+// class Almoxarifado{
+//     #quantidade
     
-    constructor(quantidade, nome){
-        this.#quantidade = quantidade
-        this.nome = nome
-    }
+//     constructor(quantidade, nome){
+//         this.#quantidade = quantidade
+//         this.nome = nome
+//     }
 
-    adicionarProduto (qtd){
-        this.#quantidade += qtd
-    }
-
-
-    retirarProduto (qtd){
-
-        if (qtd > this.#quantidade){
-            return `Não foi possível retirar ${qtd} unidades de ${this.nome}, pois o estoque tem apenas ${this.#quantidade}unidades.`
-        }
-        else{
-            this.#quantidade -= qtd
-            console.log(`O estoque tem apenas ${this.#quantidade} unidades de ${this.nome} após a retirada`)
-        }
-    }
+//     adicionarProduto (qtd){
+//         this.#quantidade += qtd
+//     }
 
 
-    consultarEstoque(){
-        console.log(`=== ESTOQUE ===`)
-        console.log(`${this.nome}: ${this.#quantidade}`)
+//     retirarProduto (qtd){
 
-    }
-}
+//         if (qtd > this.#quantidade){
+//             return `Não foi possível retirar ${qtd} unidades de ${this.nome}, pois o estoque tem apenas ${this.#quantidade}unidades.`
+//         }
+//         else{
+//             this.#quantidade -= qtd
+//             console.log(`O estoque tem apenas ${this.#quantidade} unidades de ${this.nome} após a retirada`)
+//         }
+//     }
 
-bolaVolei = new Almoxarifado(6, 'Bola de Vôlei')
-bolaVolei.adicionarProduto(4)
-bolaVolei.consultarEstoque()
-bolaVolei.retirarProduto(2)
-bolaVolei.consultarEstoque()
+
+//     consultarEstoque(){
+//         console.log(`=== ESTOQUE ===`)
+//         console.log(`${this.nome}: ${this.#quantidade}`)
+
+//     }
+// }
+
+// bolaVolei = new Almoxarifado(6, 'Bola de Vôlei')
+// bolaVolei.adicionarProduto(4)
+// bolaVolei.consultarEstoque()
+// bolaVolei.retirarProduto(2)
+// bolaVolei.consultarEstoque()
