@@ -85,7 +85,15 @@
 
 // Exercício 4: Escreva uma função que receba uma string e retorne se ela é um palíndromo (mesmo de trás para frente).
 
-function palindromo(string) {}
+// function palindromo(string) { //não consegui fazer sozinha, tentei procurar na internet, mas não entendi direito
+//     let texto = string.replace(/\s+/g, '').toLowerCase(); //comando para tirar os espaços e deixar tudo minúsculo
+//     let invertido = texto.split('').reverse().join(''); //split cria um array com cada letra, e o reverse inverte a ordem, e o join junta tudo de novo
+//     return texto === invertido;
+// }
+
+// console.log(palindromo("arara")); // true
+// console.log(palindromo("ana")); // true
+// console.log(palindromo("banana")); // false
 
 
 //Parte 2: Classes simples//////////////////////////////////////////////////////////////////////////////////////////////////
@@ -370,15 +378,39 @@ function palindromo(string) {}
 
 // Exercício 12: Crie uma classe Pedido que armazena uma lista privada de itens (nome do produto e valor). Adicione métodos adicionarItem, removerItem e calcularTotal.
 
-class Pedido{
- #itens = []
+// class Pedido{
+//  #itens = []
 
-adicionarItem(nome, valor){}
+//  adicionarItem(nome_produto, valor) {
+//         this.#itens.push({ nome_produto, valor });
+//         console.log(`Item "${nome_produto}" foi adicionado com valor de R$${valor}.`);
+//     }
 
-removerItem(nome, valor){}
+//     removerItem(nome_produto) {
+//         const index = this.#itens.findIndex(item => item.nome_produto === nome_produto); //não consegui fazer sozinha essa parte, mas não entendi direito também
+//         if (index !== -1) {
+//             const removido = this.#itens.splice(index, 1)[0];
+//             console.log(`O item "${removido.nome_produto}" foi removido.`);
+//         } else {
+//             console.log(`O item "${nome_produto}" não foi encontrado no pedido.`);
+//         }
+//     }
 
-calcularTotal(){}
-}
+//     calcularTotal() {
+//         let total = 0;
+//         this.#itens.forEach(item => {
+//             total += item.valor;
+//         });
+//     console.log(`Total do pedido: R$${total}`);
+//     return total;
+//     }
+// }
+
+// const pedido = new Pedido();
+// pedido.adicionarItem("Canelone", 20);
+// pedido.adicionarItem("Achocolatado", 7);
+// pedido.removerItem("Canelone");
+// pedido.calcularTotal();
 
 // Exercício 13: Crie uma classe UsuarioSistema com atributos privados login e senha. Adicione métodos autenticar(login, senha) e alterarSenha(senhaAntiga, senhaNova).
 
