@@ -448,34 +448,34 @@
 
 //EXERCÍCIO 15:Implemente uma classe Mensagem com o método enviar(). Crie subclasses Email, SMS e WhatsApp que sobrescrevam enviar() exibindo a mensagem de envio
 
-class Mensagem{
-  enviar(){}
+// class Mensagem{
+//   enviar(){}
   
-}
+// }
 
-class Email extends Mensagem {
-    enviar(){
-        return "Sua mensagem foi enviada por email!"
-    }
-}
-class SMS extends Mensagem {
-    enviar(){
-        return "Sua mensagem foi enviada por SMS!"
+// class Email extends Mensagem {
+//     enviar(){
+//         return "Sua mensagem foi enviada por email!"
+//     }
+// }
+// class SMS extends Mensagem {
+//     enviar(){
+//         return "Sua mensagem foi enviada por SMS!"
 
-    }
+//     }
 
-}
-class WhatsApp extends Mensagem {
-    enviar(){
-        return "Sua mensagem foi enviada por WhatsApp!"
-    }
+// }
+// class WhatsApp extends Mensagem {
+//     enviar(){
+//         return "Sua mensagem foi enviada por WhatsApp!"
+//     }
 
-}
+// }
 
-let emailMonica = new Email()
-let smsMonica = new SMS()
-let whatsAppMonica = new WhatsApp()
+// let emailMonica = new Email()
+// let smsMonica = new SMS()
+// let whatsAppMonica = new WhatsApp()
 
-console.log (emailMonica.enviar())
-console.log (smsMonica.enviar())
-console.log (whatsAppMonica.enviar())
+// console.log (emailMonica.enviar())
+// console.log (smsMonica.enviar())
+// console.log (whatsAppMonica.enviar())
