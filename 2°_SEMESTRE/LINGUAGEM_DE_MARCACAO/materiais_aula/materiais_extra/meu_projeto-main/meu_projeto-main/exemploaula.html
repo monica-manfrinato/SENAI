@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles\exemploaula.css" >
+</head>
+
+<body>
+    <!-- A tag H1 é um título-->
+    <h1>
+        Bom dia mundo!
+    </h1>
+    <p>
+    Visite o <a href="meu_hobbie.html" target="_blank">Google</a> para fazer suas
+    pesquisas.
+    </p>
+    <h2>O Celso é EXTREMAMENTE legal, fora que é bem de grana!</h2>
+    <h3>Daniel gente boa</h3>
+    <h4>A galera está na OBG</h4>
+    <h5>Boa tarde</h5>
+    <h6>Boa noite</h6>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sapiente suscipit blanditiis earum modi ipsam
+        sunt hic quae vero atque beatae unde, cum cumque dolores! Laborum et doloremque asperiores eum.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vero inventore nam vitae! Repellendus
+        <br>
+        praesentium soluta necessitatibus modi ea cupiditate blanditiis eveniet pariatur? Distinctio praesentium
+        voluptatibus itaque, porro alias laboriosam.
+    </p>
+    <h2>Lista de Compras</h2>
+    <ul>
+    <li>Arroz</li>
+    <li>Feijão</li>
+    <li>Café</li>
+    </ul>
+
+    <h2>Passos para Fazer Café</h2>
+    <ol type="A">
+    <li>Ferva a água.</li>
+    <li>Coloque o pó no coador.</li>
+    <li>Despeje a água quente.</li>
+    </ol>
+
+    <h2>Glossário da Web</h2>
+    <dl>
+    <dt>HTML</dt>
+    <dd>
+    Linguagem de Marcação de Hipertexto,
+    usada para estruturar páginas web.
+    </dd>
+    <dt>PAULA</dt>
+    <dd>
+        Uma menina linda e engraçada
+    </dd>
+    </dl>
+
+    <h2>Lista de Compras</h2>
+    <ul type="square">
+    <li>Leite</li>
+    <li>Feijão</li>
+    <li>Café</li>
+    </ul>
+
+    <h1>Listas encadeadas</h1>
+    <ul>
+        <li>Cantores</li>
+        <ul> 
+            <li>Rita Lee</li>
+            <li>Gal Costa</li>
+        </ul>
+        <li>Músicas</li>
+        <ol>
+            <li>Xuxuzinho</li>
+            <li>Sorte</li>
+        </ol>
+    </ul>
+
+    <table>
+        <tr >
+            <th colspan="2">Cantores</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Rita Lee</td>
+            <td>Gal Costa</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <p></p>
+
+    <form action="" method="">
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha">
+        <br> <!-- uso errado -->
+
+        <label for="email_contato">Email:</label>
+        <input type="email" id="email_contato" name="email_contato">
+        <br>
+
+        <label for="idade">idade</label>
+        <input type="number" id="idade">
+        
+        <p>Qual seu período de preferência?</p>
+        <input type="radio" id="manha" name="periodo" value="manha">
+        <label for="manha">Manhã</label><br>
+        <input type="radio" id="tarde" name="periodo" value="tarde">
+        <label for="tarde">Tarde</label><br>
+
+        <p>Quais tecnologias você conhece?</p>
+        <input type="checkbox" id="html" name="tecnologias" value="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" id="css" name="tecnologias" value="css">
+        <label for="css">CSS</label><br>
+        <input type="checkbox" id="js" name="tecnologias" value="javascript">
+        <label for="js">JavaScript</label><br>
+
+        <label for="estado">Estado:</label>
+        <select name="estado" id="estado">
+            <option value="">Selecione...</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+        </select>
+
+        <p></p>
+
+        <button type="reset">Limpar Tudo</button>
+
+        <button type="submit"> Enviar </button>
+    </form>
+
+    <p></p>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="avatar">Foto de Perfil:</label>
+        <input type="file" id="avatar" name="avatar">
+        <button type="submit">Enviar Foto</button>
+    </form>
+
+    <p> Vamos para a página <a href="meu_hobbie.html">meu hobbie</a> </p>
+</body>
+
+</html>
