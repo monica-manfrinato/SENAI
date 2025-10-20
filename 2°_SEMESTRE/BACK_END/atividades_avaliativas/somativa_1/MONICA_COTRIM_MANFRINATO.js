@@ -27,32 +27,31 @@
 
 //Exercício 2:
 
-class Colaborador {
+// class Colaborador {
 
-    constructor(nome, cargo, salario){
-        this.nome = nome
-        this.cargo = cargo
-        this.salario = salario
-    }
+//     constructor(nome, cargo, salario){
+//         this.nome = nome
+//         this.cargo = cargo
+//         this.salario = salario
+//     }
 
-    aumentarSalario(percentual){
-        this.salario *= (1 + percentual/100)
-        return `O salário após o aumento ficou de ${this.salario}`
-    }
+//     aumentarSalario(percentual){
+//         this.salario *= (1 + percentual/100)
+//         return `O salário após o aumento ficou de ${this.salario}`
+//     }
 
-    exibirDados(){
-        return` === DADOS COLABORADOR ===  
-        Nome: ${this.nome}
-        Cargo: ${this.cargo}
-        Salário atual: ${this.salario}`
-    }
-}
+//     exibirDados(){
+//         return` === DADOS COLABORADOR ===  
+//         Nome: ${this.nome}
+//         Cargo: ${this.cargo}
+//         Salário atual: ${this.salario}`
+//     }
+// }
 
-
-monica = new Colaborador ('Mônica', 'Gerente', 10000)
-console.log(monica.exibirDados())
-console.log(monica.aumentarSalario(50))
-console.log(monica.exibirDados())
+// const monica = new Colaborador ('Mônica', 'Gerente', 10000)
+// console.log(monica.exibirDados())
+// console.log(monica.aumentarSalario(50))
+// console.log(monica.exibirDados())
 
 
 
