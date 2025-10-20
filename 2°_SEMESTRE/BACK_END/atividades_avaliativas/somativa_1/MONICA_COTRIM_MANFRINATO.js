@@ -1,27 +1,27 @@
 //Exercício 1:
 
-// const candidatos = {
-//  ana: true,
-//  bruno: false,
-//  carla: true,
-//  daniel: false
-// };
+const candidatos = {
+ ana: true,
+ bruno: false,
+ carla: true,
+ daniel: false
+};
 
-// function verificarCandidato(nome, callback){
-//     return (conferir(nome))
-// }
+function verificarCandidato(nome, callback){
+    return callback(nome)
+}
 
-// function conferir(nome){
-//     if (nome[candidatos]){
-//         console.log( 'Candidato aprovado para a próxima fase')
-//     }
-//     else{
-//         console.log ('Candidato reprovado')
-//     }
-// }
-// verificarCandidato('ana', conferir); //Candidato aprovado
-// verificarCandidato('bruno', conferir); //Candidato reprovado
-// verificarCandidato('carla', conferir); //Candidato aprovado
+function conferir(nome){
+    if (candidatos[nome]){ //tem q ser candidados[nome] pq quer acessar o nome dentro de candidatos
+        console.log( 'Candidato aprovado para a próxima fase')
+    }
+    else{
+        console.log ('Candidato reprovado')
+    }
+}
+verificarCandidato('ana', conferir); //Candidato aprovado
+verificarCandidato('bruno', conferir); //Candidato reprovado
+verificarCandidato('carla', conferir); //Candidato aprovado
 
 
 
