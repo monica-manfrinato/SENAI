@@ -1,58 +1,58 @@
 //Exercício 1:
 
-const candidatos = {
- ana: true,
- bruno: false,
- carla: true,
- daniel: false
-};
+// const candidatos = {
+//  ana: true,
+//  bruno: false,
+//  carla: true,
+//  daniel: false
+// };
 
-function verificarCandidato(nome, callback){
-    return callback(nome)
-}
+// function verificarCandidato(nome, callback){
+//     return callback(nome)
+// }
 
-function conferir(nome){
-    if (candidatos[nome]){ //tem q ser candidados[nome] pq quer acessar o nome dentro de candidatos
-        console.log( 'Candidato aprovado para a próxima fase')
-    }
-    else{
-        console.log ('Candidato reprovado')
-    }
-}
-verificarCandidato('ana', conferir); //Candidato aprovado
-verificarCandidato('bruno', conferir); //Candidato reprovado
-verificarCandidato('carla', conferir); //Candidato aprovado
+// function conferir(nome){
+//     if (candidatos[nome]){ //tem q ser candidados[nome] pq quer acessar o nome dentro de candidatos
+//         console.log( 'Candidato aprovado para a próxima fase')
+//     }
+//     else{
+//         console.log ('Candidato reprovado')
+//     }
+// }
+// verificarCandidato('ana', conferir); //Candidato aprovado
+// verificarCandidato('bruno', conferir); //Candidato reprovado
+// verificarCandidato('carla', conferir); //Candidato aprovado
 
 
 
 //Exercício 2:
 
-// class Colaborador {
+class Colaborador {
 
-//     constructor(nome, cargo, salario){
-//         this.nome = nome
-//         this.cargo = cargo
-//         this.salario = salario
-//     }
+    constructor(nome, cargo, salario){
+        this.nome = nome
+        this.cargo = cargo
+        this.salario = salario
+    }
 
-//     aumentarSalario(percentual){
-//         this.salario *= (1 + percentual/100)
-//         return `O salário após o aumento ficou de ${this.salario}`
-//     }
+    aumentarSalario(percentual){
+        this.salario *= (1 + percentual/100)
+        return `O salário após o aumento ficou de ${this.salario}`
+    }
 
-//     exibirDados(){
-//         return` === DADOS COLABORADOR ===  
-//         Nome: ${this.nome}
-//         Cargo: ${this.cargo}
-//         Salário atual: ${this.salario}`
-//     }
-// }
+    exibirDados(){
+        return` === DADOS COLABORADOR ===  
+        Nome: ${this.nome}
+        Cargo: ${this.cargo}
+        Salário atual: ${this.salario}`
+    }
+}
 
 
-// monica = new Colaborador ('Mônica', 'Gerente', 10000)
-// console.log(monica.exibirDados())
-// console.log(monica.aumentarSalario(50))
-// console.log(monica.exibirDados())
+monica = new Colaborador ('Mônica', 'Gerente', 10000)
+console.log(monica.exibirDados())
+console.log(monica.aumentarSalario(50))
+console.log(monica.exibirDados())
 
 
 
