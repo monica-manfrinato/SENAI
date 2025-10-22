@@ -1,0 +1,64 @@
+
+DDL - Estruturação
+DCL - Permissões
+DML - Manipulação de dados:
+
+Inserir - Insert
+Atualizar - Update
+Excluir - Delte
+Consultar - Select
+
+
+
+ISERT
+
+Adiciona novos registros em uma tabela, a ordem dos novos registros devem corresponder a ordem de campos da tabela
+
+INSERT INTO tbl_autor (nome_autor, nacionalidade)
+VALUES ("Monica", "Brasileira")
+
+
+UPDATE
+
+Pega o que já existe e modifica
+
+UPDATE tbl_autor
+SET nacionalidade = 'Brasileiro'
+WHERE id_autor = 1;
+
+O where é necessário para indicar qual negócio vai ser adicionada a mudança
+
+
+UPDATE tbl_autor
+SET nome_autor = 'J.K. Rowling (Joanne Rowling)', nacionalidade = 'Britânica (Reino Unido)'
+WHERE id_autor = 1;
+
+
+O comando DELETE é usado para remover registros (linhas) de uma tabela.
+
+DELETE from autor
+WHERE id_autor = 2;
+
+Para realizar o DELETE, precisa desvincular o elemento dos seus relacionamentos
+NÃO PODE ESQUECER O 'WHERE', POIS VAI MODIFICAR TUDO :(
+
+=======================================================================================================
+
+SELECT
+
+SELECT * from nome_tabela; --> forma mais simples, visualiza a tabela toda;
+SELECT nome_autor, nacionalidade 
+FROM autor;
+
+SELECT * FROM autor 
+WHERE id_autor = 1; -----> Seleciona as informações do autor que possuí o ID 1
+
+=======================================================================================================
+OPERADORES E FUNÇÕES
+
+•Operadores: Permitem criar filtros mais complexos e inteligentes (ex: buscar
+por faixas de data, por nomes que começam com 'A', ou que não são de uma
+categoria).
+•Funções: São ferramentas prontas do SQL que executam cálculos,
+manipulam textos ou datas (ex: formatar um nome para maiúsculas, calcular a
+data de devolução de um livro).

@@ -15,7 +15,22 @@ editora VARCHAR(30)
 );
 
 INSERT INTO livro(ISBN, titulo, ano_publicacao, editora) VALUE ('123456789', 'Diário de um Banana', '2009', 'SENAI'), ('9876543210', 'Diário de um Banana 2', '2010', 'SENAI');
+select * from livro;
 
+INSERT INTO livro(ISBN, titulo, ano_publicacao, editora) VALUE 
+('978-85-325-3078-3', 'Harry Potter e a Pedra Filosofal', 1997, 'Rocco'),
+('978-85-7126-061-0', 'Dom Casmurro', 1899, 'Editora Clássica');
+
+UPDATE livro
+SET ano_publicacao = 2019
+WHERE ISBN = '978-85-7126-061-0';
+
+UPDATE autor
+SET nome_autor = 'J.K. Rowling (Joanne Rowling)', nacionalidade = 'Britânica (Reino Unido)'
+WHERE id_autor = 2;
+
+SELECT * from livro
+WHERE ano_publicacao < 2000;
 ##############################################################################################################################################################################################################
 
 CREATE TABLE exemplares(
@@ -27,6 +42,7 @@ CONSTRAINT FK_ISBN_exemplar  FOREIGN KEY (ISBN) REFERENCES livro(ISBN)
 );
 
 INSERT INTO exemplares(id_exemplar, ISBN, status_exemplar) VALUE ('1111', '123456789', 'Emprestado');
+select * from exemplares;
 ##############################################################################################################################################################################################################
 
 CREATE TABLE autor(
@@ -37,8 +53,11 @@ nacionalidade VARCHAR(50) NOT NULL
 
 
 #INSERT INTO autor(nome_autor, nacionalidade) VALUE ('Daniel', 'Brasileiro'); #não coloca o id_autor pq ele ja é auto_increment
-INSERT INTO autor(nome_autor, nacionalidade) VALUE ('Marlon Greg', 'Brasileiro'); #esse mesmo comando pode ser executado utilizando a query de cima, pois tudo vai ficar armazenado assim que é executado
+INSERT INTO autor(nome_autor, nacionalidade) VALUE ('Marlon Greg', 'Brasileiro'), ('Machado de Assis', 'Brasileiro'), ('J.K. Rowling', 'Britânica'); #esse mesmo comando pode ser executado utilizando a query de cima, pois tudo vai ficar armazenado assim que é executado
+select * from autor;
 
+DELETE from autor
+WHERE id_autor = 2; #Vai excluir o autor que ta no ID 2
 ##############################################################################################################################################################################################################
 
 CREATE TABLE autor_livro(
@@ -51,7 +70,10 @@ CONSTRAINT id_autor  FOREIGN KEY (id_autor) REFERENCES autor(id_autor)
 );
 
 INSERT INTO autor_livro(id_autor_livro, id_autor, ISBN) VALUE ('12345', '1', '123456789'), ('23456', '2', '9876543210'); #não dá pra colocar o 2, pq só criou 1 autor, o Daniel
+select * from autor_livro;
 
+DELETE from autor_livro
+WHERE id_autor = 2;
 ##############################################################################################################################################################################################################
 
 CREATE TABLE membros(
@@ -62,7 +84,13 @@ telefone_contato VARCHAR(30)
 );
 
 INSERT INTO membros(id_matricula, nome_completo, endereco, telefone_contato) VALUE ('2215', 'Mônica Cotrim Manfrinato', 'Rua Marechal Deodoro da FOnseca', 11975268516);
+select * from membros;
+INSERT INTO membros(id_matricula, nome_completo, endereco, telefone_contato) VALUE(101, 'Ana Silva', 'Rua A, 123', '11-98765-4321'),
+(102, 'Bruno Costa', 'Av. B, 456', '11-91234-5678'),
+(103, 'Carla Dias', 'Praça C, 789', '11-95555-4444');
 
+DELETE from membros
+WHERE id_matricula = '102';
 ##############################################################################################################################################################################################################
 
 CREATE TABLE emprestimos(
@@ -78,7 +106,7 @@ CONSTRAINT FK_id_matricula_emprestimos  FOREIGN KEY (id_matricula) REFERENCES me
 );
 
 INSERT INTO emprestimos(id_emprestimo, id_exemplar, id_matricula, data_emprestimo, previsao_devolucao) VALUE ('112233','1111','2215', '2025-09-12', '2025-09-19' );
-
+select * from emprestimos;
 
 ##############################################################################################################################################################################################################
 
@@ -86,3 +114,18 @@ CREATE USER 'estagiario'@'localhost' IDENTIFIED BY 'mudar123';
 GRANT ALTER ON biblioteca_comunitaria.livro TO 'estagiario'@'localhost';
 
 ALTER TABLE livros ADD COLUMN genero VARCHAR(50);
+
+##############################################################################################################################################################################################################
+
+UPDATE autor
+SET nome_autor = 'J.K. Rowling (Joanne Rowling)', nacionalidade = 'Britânica (Reino Unido)'
+WHERE id_autor = 2;
+
+##############################################################################################################################################################################################################
+SELECT nome_autor, nacionalidade 
+FROM autor;
+
+SELECT * FROM autor 
+WHERE id_autor = 1; 
+
+
