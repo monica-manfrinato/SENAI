@@ -42,6 +42,8 @@ CONSTRAINT FK_ISBN_exemplar  FOREIGN KEY (ISBN) REFERENCES livro(ISBN)
 );
 
 INSERT INTO exemplares(id_exemplar, ISBN, status_exemplar) VALUE ('1111', '123456789', 'Emprestado');
+INSERT INTO exemplares(id_exemplar, ISBN, status_exemplar) VALUE ('1', '1234567810', 'Emprestado');
+
 select * from exemplares;
 ##############################################################################################################################################################################################################
 
@@ -106,6 +108,8 @@ CONSTRAINT FK_id_matricula_emprestimos  FOREIGN KEY (id_matricula) REFERENCES me
 );
 
 INSERT INTO emprestimos(id_emprestimo, id_exemplar, id_matricula, data_emprestimo, previsao_devolucao) VALUE ('112233','1111','2215', '2025-09-12', '2025-09-19' );
+INSERT INTO emprestimos(id_emprestimo, id_exemplar, id_matricula, data_emprestimo, previsao_devolucao) VALUE ('3','1234','2215', '2025-09-12', '2025-09-19' );
+
 select * from emprestimos;
 
 ##############################################################################################################################################################################################################
@@ -128,4 +132,28 @@ FROM autor;
 SELECT * FROM autor 
 WHERE id_autor = 1; 
 
+SELECT titulo, ano_publicacao, ano_publicacao + 10 AS ano_revisao FROM livro; 
 
+SELECT * from livro 
+WHERE ano_publicacao < 2010
+AND editora = "Rocco";
+
+SELECT * from membros 
+WHERE nome_completo = "Ana Silva" 
+OR endereco = "Praça C, 789";
+
+SELECT * FROM autor WHERE  NOT nacionalidade = "Brasileira" AND NOT nacionalidade = "Brasileiro";
+SELECT * FROM livro WHERE ano_publicacao BETWEEN 1990 AND 2000;
+SELECT * FROM livro WHERE editora IN ("Rocco", "Editora Clássica");
+
+SELECT * FROM membros WHERE nome_completo LIKE "Ana%";
+
+SELECT * FROM emprestimos WHERE data_devolucao IS NULL;
+
+######################################################################################################################
+
+INSERT INTO emprestimos (id_emprestimo, id_exemplar, id_matricula, data_emprestimo, previsao_devolucao) VALUES (3,1111,2215, CURDATE(), CURDATE() + INTERVAL 7 DAY);
+
+SELECT CONCAT(UPPER(nome_autor), '(', nacionalidade, ')')
+AS etiqueta
+FROM autor;
