@@ -1,0 +1,80 @@
+ 1 - rie um objeto JSON que represente um único aluno. O objeto deve conter as seguintes chaves e tipos de dados:
+matricula: (Number) Ex: 10234
+nome_completo: (String) Ex: "José da Silva"
+email: (String) Ex: "jose.silva@aluno.senai.br"
+idade: (Number) Ex: 19
+bolsista: (Boolean) Ex: true
+media_final: (Number, pode ser decimal) Ex: 8.5
+curso: (Null) O aluno ainda não foi matriculado em um curso.
+
+{
+    "matricula": 22150,
+    "nome_completo": "Letícia Robertinha",
+    "email": "lets.roberts@aluno.senai.br",
+    "idade": 15,
+    "bolsista": true,
+    "media_final": 10,
+    "curso": "Análise e Desenvolvimento de Sistemas"
+}
+
+2 - Crie um objeto JSON que represente uma "Turma". A estrutura deve conter:
+Uma chave codigo_turma (String).
+Uma chave periodo (String, ex: "Manhã").
+Uma chave professor cujo valor seja um outro objeto JSON contendo nome e area (ex: "Desenvolvimento Back-End").
+Uma chave alunos cujo valor seja um array (lista). Dentro desse array, adicione dois objetos "Aluno", cada um com as chaves nome e matricula.
+
+{
+    "codigo_turma": "DETS-12",
+    "periodo": "Noturno",
+    "professor":{
+        "nome": "Adolfino",
+        "area": "Desenvolvimento Front-End"
+    },
+    "alunos": [
+            {"nome": "Moniquinha",
+            "matricula": 12345},
+            {"nome": "Leticinha",
+            "matricula": 54321}]
+    
+}
+
+3 - Crie um objeto JSON que represente um "Pedido" em um site de e-commerce. A estrutura deve ser a seguinte:
+Chave id_pedido (String ou Number).
+Chave data_pedido (String, ex: "2024-10-27T10:30:00").
+Chave status (String, ex: "Processando").
+Chave cliente: O valor deve ser um objeto com nome e email.
+Chave endereco_entrega: O valor deve ser um objeto com rua, numero, cidade e cep.
+Chave itens: O valor deve ser um array de objetos. Cada objeto dentro deste array representa um item comprado e deve ter:
+-id_produto (String)
+-nome_produto (String)
+-quantidade (Number)
+-preco_unitario (Number, decimal)
+
+Adicione pelo menos dois itens diferentes ao pedido.
+
+{
+    "id_pedido": 112233,
+    "data_pedido": "2025-11-03 T10:30:00",
+    "status": "Entregue",
+    "cliente": {
+        "nome": "Leticinha de Robertinha de Soutinho de Oliveirinha",
+        "email": "lets.roberts@aluno.senai.br"
+    },
+    "endereco_entrega": {
+        "rua": "Rua das capivarinhas chupando manguinhas",
+        "numero": 2017,
+        "cidade": "Pizzalandzinha",
+        "cep": 12224-141
+    },
+    "itens":[
+        {"id_produto": "ADFROEK34679MMDSII39459692JFKFJKSKS3I341",
+        "nome_produto": "Pizzinhas de moranguinho com leitinho condensadinho de plastiquinho",
+        "quantidade": 5,
+        "preco_unitarios": 20.00},
+
+        {"id_produto": "DFNVIIGBWBI5678695043FVIEGBSI456RFOVI61",
+        "nome_produto": "Coxinhas de uvinhas verdinhas com nutellinha de plastiquinho",
+        "quantidade": 6,
+        "preco_unitarios": 10.00}
+    ]
+}
