@@ -74,6 +74,7 @@ CONSTRAINT id_autor  FOREIGN KEY (id_autor) REFERENCES autor(id_autor)
 INSERT INTO autor_livro(id_autor_livro, id_autor, ISBN) VALUE ('12345', '1', '123456789'), ('23456', '2', '9876543210'); #não dá pra colocar o 2, pq só criou 1 autor, o Daniel
 select * from autor_livro;
 
+select * from autor;
 DELETE from autor_livro
 WHERE id_autor = 2;
 ##############################################################################################################################################################################################################
@@ -157,3 +158,115 @@ INSERT INTO emprestimos (id_emprestimo, id_exemplar, id_matricula, data_empresti
 SELECT CONCAT(UPPER(nome_autor), '(', nacionalidade, ')')
 AS etiqueta
 FROM autor;
+
+######################################################################################################################
+
+SELECT ROUND(19.99*1.05,3);
+SELECT 19.99*1.05;
+SELECT FLOOR(19.99*1.05);
+SELECT CEIL(19.99*1.05);
+
+######################################################################################################################
+
+SELECT COUNT(*) AS total_membros FROM membros; ##AS é para renomear a coluna na exibição
+SELECT MIN(ano_publicacao) AS livro_mais_antigo FROM livro;
+SELECT MAX(ano_publicacao) AS livro_mais_novo FROM livro;
+
+SELECT FLOOR(AVG(ano_publicacao)) AS media_dos_anos FROM livro;
+
+INSERT INTO autor (nome_autor, nacionalidade)
+VALUES ('Clarice Lispector', 'Brasileira'),
+('George Orwell', 'Britânico'),
+('Isaac Asimov', 'Russo-Americano');
+
+INSERT INTO livro (ISBN, titulo, ano_publicacao, editora)
+VALUES ('978-85-325-2306-8', 'A Revolução dos Bichos', 1945, 'Companhia das Letras'),
+('978-0-00-711711-0', '1984', 1949, 'Penguin Books'),
+('978-85-325-1997-9', 'Eu, Robô', 1950, 'Aleph');
+
+SELECT * FROM membros WHERE nome_completo LIKE "%Silva";
+select * from livro where ano_publicacao between 1939 and 1945;
+select * from livro where editora in ("Rocco", "Aleph");
+select * from livro where editora not in ("Rocco", "Aleph");
+
+select  concat(upper(nome_completo), ' - ( ', telefone_contato, ')') 
+as CONTATO from membros;
+
+select count(*) as autores_brasileiros from autor where nacionalidade = 'brasileir_';
+select min(ano_publicacao) as livro_mais_antigo from livro where editora = "Aleph";
+
+
+INSERT INTO emprestimos (id_emprestimo, id_exemplar, id_matricula, data_emprestimo, previsao_devolucao)
+VALUES (501,'1111',101, CURDATE(), CURDATE() + INTERVAL 14 DAY);
+
+select * from emprestimos;
+
+######################################################################################################################
+
+SELECT editora, COUNT(ISBN) AS quantidade_livros FROM livro GROUP BY editora;
+
+INSERT INTO livro (ISBN,titulo, ano_publicacao, editora)
+VALUES ('999-987654-987', 'Esse é o meu livro', 2020, 'Rocco'),
+('999-987654-988', 'Esse é o livro da Helo', 2020, 'Rocco'),
+('999-987654-989', 'Esse é o livro da Leticinha', 2020, 'Rocco');
+
+SELECT titulo, MAX(ano_publicacao) AS ano_publicacao, editora FROM livro GROUP BY editora;
+
+SELECT editora, COUNT(ISBN) AS quantidade_livros FROM livro GROUP BY editora
+HAVING COUNT(ISBN) >=2;
+
+
+SELECT nome_autor AS nome, 'Autor' AS tipo FROM autor
+UNION
+SELECT nome_completo AS nome, 'Membro' AS tipo FROM membros;
+
+SELECT L.titulo, A.nome_autor
+FROM livro L
+CROSS JOIN autor A;
+
+SELECT L.titulo, AL.id_autor
+FROM livro L
+INNER JOIN autor_livro AL 
+ON L.ISBN = AL.ISBN;
+
+
+
+INSERT INTO autor_livro(id_autor_livro, id_autor, ISBN)
+VALUE ('11111', '1', '978-0-00-711711-0'), 
+('22222', '3', '978-85-325-1997-9'),
+('33333', '4', '978-85-325-2306-8'), 
+('44444', '5', '978-85-325-3078-3'),
+('55555', '6', '978-85-7126-061-0'), 
+('66666', '6', '999-987654-987'),
+('77777', '3', '999-987654-988'), 
+('88888', '4', '999-987654-989');
+select * from autor;
+
+
+SELECT L.titulo, A.nome_autor
+FROM livro L
+INNER JOIN autor_livro AL
+ON L.ISBN = AL.ISBN
+
+INNER JOIN autor A
+ON AL.id_autor = A.id_autor;
+
+
+SELECT titulo
+FROM livro
+WHERE ISBN IN ( 
+	SELECT ISBN FROM autor_livro WHERE id_autor IN (
+		SELECT id_autor FROM autor WHERE nacionalidade LIKE 'Brasileir_'
+	)
+);
+
+SELECT nome_autor FROM autor A 
+WHERE EXISTS (
+	SELECT 1 FROM autor_livro AL WHERE AL.id_autor = A.id_autor
+);
+
+SELECT titulo, ano_publicacao FROM livro WHERE ano_publicacao < any (
+SELECT ano_publicacao FROM livro
+WHERE editora = 'Aleph'
+);
+
