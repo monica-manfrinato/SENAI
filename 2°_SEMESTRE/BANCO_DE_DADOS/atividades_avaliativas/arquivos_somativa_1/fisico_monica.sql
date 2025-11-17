@@ -270,3 +270,133 @@ SELECT ano_publicacao FROM livro
 WHERE editora = 'Aleph'
 );
 
+#######################################################################################
+#Exercícios Aula 08
+
+ INSERT INTO autor (nome_autor, nacionalidade)
+ VALUES ('Frank Herbert', 'Americano');
+ 
+INSERT INTO exemplares (id_exemplar, status_exemplar, ISBN)
+ VALUES (101, 'Disponível', '978-85-325-3078-3'),
+ (102, 'Emprestado', '978-85-325-3078-3'),
+ (103, 'Disponível', '978-85-7126-061-0');
+ 
+ INSERT INTO tbl_emprestimo
+ (id_emprestimo, data_emprestimo, data_devolucao, data_devolucao_efetiva, id_exemplar, id_membro)
+ VALUES (501, '2024-10-01', '2024-10-15', NULL, 102, 101);
+ 
+ INSERT INTO emprestimos
+ (id_emprestimo, id_exemplar, id_matricula, data_emprestimo, previsao_devolucao)
+ VALUES(500, 102 , 101, '2024-10-01', '2024-10-15' );
+
+SELECT ISBN, COUNT(*) AS quantidade_exemplares FROM exemplares GROUP BY ISBN;
+
+-- Select inner joy do nome, titulo livro e data prevista para devolução do livro
+
+SELECT M.nome_completo, L.titulo, E.previsao_devolucao -- A letra signifca a tabela de origem dessas informações, e os valores são os que eu quero receber
+FROM emprestimos E -- Essa é a tabela que relaciona id_exemplar com id_matricula
+INNER JOIN exemplares EX -- Defino a sigla para exemplares como EX
+ON E.id_exemplar = EX.id_exemplar -- Relaciono o id_exemplar da tabela empréstimos com o da tabela exemplares
+INNER JOIN livro L -- Defino a sigla para livros como L
+ON L.ISBN = EX.ISBN -- Relaciono o ISBN da tabela livros com o da tabela exemplares
+INNER JOIN membros M -- Defino a sigla para membros como M
+ON M.id_matricula = E.id_matricula; -- Relaciono o id_matricula da tabela membros com a tabela emprestimos
+
+
+-- Left join
+
+SELECT A.nome_autor, COUNT(AL.ISBN) AS quantidade -- Sabendo quantas vezes o nome do autor aparece na tabela AL relacionado com ISBN (Dessa forma sabemos quantos livros cada autor escreveu)
+FROM autor A
+LEFT JOIN autor_livro AL ON
+A.id_autor = AL.id_autor
+GROUP BY A.nome_autor;
+
+-- Subquery
+
+SELECT nome_completo FROM membros
+WHERE id_matricula IN (
+SELECT id_matricula FROM emprestimos 
+WHERE data_devolucao IS NULL
+);
+
+
+START TRANSACTION;
+UPDATE membros SET telefone_contato = '11-99999-0000' WHERE id_matricula = "101";
+COMMIT;
+
+-- ROLLBACK 
+START TRANSACTION;
+INSERT INTO membros(id_matricula, nome_completo, endereco, telefone_contato) 
+VALUE ('999', 'Membro teste', 'Rua Marechal Deodoro da Fonseca', 11985268516);
+ROLLBACK;
+
+SELECT * FROM membros;
+
+
+START TRANSACTION;
+
+INSERT INTO membros(id_matricula, nome_completo, endereco, telefone_contato) 
+VALUE ('999', 'Lets Roberts', 'Rua Marechal Deodoro da Fonseca', 11987268516);
+
+SAVEPOINT ponto_A;
+
+INSERT INTO membros(id_matricula, nome_completo, endereco, telefone_contato) 
+VALUE ('888', 'Paulete pvd', 'Rua Marechal Deodoro da Fonseca', 11985898516);
+ 
+ SELECT * FROM membros;
+ ROLLBACK TO SAVEPOINT ponto_A;
+ COMMIT;
+ 
+ ######################################################################################################################
+ 
+ 
+CREATE VIEW V_relatorio_emprestimos AS 
+SELECT 
+M.nome_completo, L.titulo, E.data_emprestimo, E.previsao_devolucao 
+FROM membros M 
+JOIN emprestimos E ON M.id_matricula = E.id_matricula 
+JOIN exemplares EX ON E.id_exemplar = EX.id_exemplar
+JOIN livro L ON EX.ISBN = L.ISBN;
+
+SELECT * FROM V_relatorio_emprestimos WHERE nome_completo = 'Ana Silva';
+
+DELIMITER $$
+CREATE PROCEDURE sp_novo_emprestimo( 
+IN p_id_exemplar VARCHAR(50), 
+IN p_id_matricula VARCHAR(50) 
+) 
+
+BEGIN 
+	INSERT INTO emprestimos( 
+id_emprestimo, data_emprestimo, previsao_devolucao, data_devolucao, id_exemplar, id_matricula
+) 
+	VALUES (
+		1900,CURDATE(), CURDATE() + INTERVAL 14 DAY, NULL, p_id_exemplar, p_id_matricula);
+END$$
+DELIMITER ;
+
+drop  procedure sp_novo_emprestimo;
+CALL sp_novo_emprestimo("101","101");
+
+
+DELIMITER $$
+CREATE FUNCTION fn_status_membro (p_id_matricula VARCHAR(50)) 
+RETURNS VARCHAR(20) 
+DETERMINISTIC 
+BEGIN  
+DECLARE v_atrasos INT; 
+SELECT COUNT(*) INTO v_atrasos 
+FROM emprestimos 
+WHERE id_matricula = p_id_matricula 
+AND previsao_devolucao < CURDATE() 
+AND data_devolucao IS NULL; 
+IF v_atrasos > 0 THEN 
+RETURN 'Com atraso'; 
+ELSE 
+RETURN 'Regular'; 
+END IF; 
+END$$ 
+DELIMITER ; 
+
+SELECT nome_completo, fn_status_membro(id_matricula) FROM membros; 
+drop  function fn_status_membro;
