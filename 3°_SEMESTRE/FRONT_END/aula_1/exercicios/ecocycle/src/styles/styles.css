@@ -1,0 +1,23 @@
+#cabecalho{
+    background-color: #245b25;
+}
+
+h2{
+    color: #000000;
+}
+
+p{
+    color: #874040;
+}
+
+img{
+    max-width: 100%;    
+}
+nav :hover{color: aliceblue;
+cursor: pointer;}
+
+article.card-noticia:hover{    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;}
