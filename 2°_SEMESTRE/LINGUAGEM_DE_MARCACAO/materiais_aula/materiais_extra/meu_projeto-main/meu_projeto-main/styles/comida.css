@@ -1,0 +1,12 @@
+h1{
+    color: #000000;
+
+}
+body{
+    /* background-color: #8f8896; */
+    background-image:url(../src/imagens/Sem_título.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+}

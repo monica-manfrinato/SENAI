@@ -1,0 +1,19 @@
+body{
+    background-color:#f4f4f4;
+}
+
+h1{
+    color: #ffffff;
+    background-image: url(../src/imagens/Sem_título.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: on-repeat;
+}
+
+p{
+    color: #333333;
+}
+
+img{
+    width: 150px;
+}

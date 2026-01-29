@@ -1,0 +1,52 @@
+ATIVIDADE LEVANTAMENTO DE REQUISITOS:
+
+Ele é um vendedor de bebidas, quer desenvolver um site para divulgar as bebidas e  uma possível aba de vendas
+- Marcelo
+
+1 - Horário de trabalho?
+
+R:8 - 17
+ 
+2 - Estilo do site? Quais suas referências?
+
+R: Sites de venda de sucos
+
+8 - Qual o tipo de bebida?
+
+R:Sucos emilkashkaes
+ 
+3 - Vai ter sistema de estoque?
+
+R: Sim já tem ums sitema, mas aceita encomendas
+
+6 - Forma de pagamento que você vai aceitar?
+
+R: Pix, cartão, 
+ 
+4 - Vai ter rede social?
+
+R: Pretende ter 
+ 
+5 - O cliente pode por sugestões de bebidas no site?
+
+R: Sim com certeza, para dar abertura aos clientes
+ 
+7 - Qual o seu público alvo?
+
+R: Todos os tipos de pessoas
+ 
+9 - Vai ser delivery? Ou o cliente busca no local? Ou
+ambos?
+
+R: Tem delivery mas também tem uma lojinha física
+ 
+10 - Qual prazo que você espera?
+
+R: Até outubro
+ 
+11 -Outros setores vão utilizar o sistema? Pode ser feito o levantamento com os outros setores
+da empresa?
+
+R:
+
+===================================================================================================
