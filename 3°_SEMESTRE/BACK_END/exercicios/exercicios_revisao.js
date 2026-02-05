@@ -97,3 +97,84 @@ exibirModeloMarca(){
 
 const carro1 = new Carro("Ford", "Ka")
 carro1.exibirModeloMarca()
+
+
+
+// Crie uma classe chamada Conta onde:
+// - O saldo seja um atributo privado
+// - método depositar (valor)
+// - método mostrarSaldo()
+
+
+
+class Conta{
+
+    #saldo
+    constructor(saldo){
+        this.#saldo = saldo
+
+    }
+
+depositar(valor){
+    if(valor > 0){
+    this.#saldo += valor
+    console.log(`Seu depósito de ${valor} reais foi realizado`)
+    }
+    else{
+        console.log("Valor inválido")
+    }
+}
+
+mostrarSaldo(){
+    console.log(`O saldo é de ${this.#saldo} reais`)
+}
+
+}
+
+const contaMonica = new Conta(0)
+contaMonica.depositar(0)
+contaMonica.mostrarSaldo()
+contaMonica.depositar(10)
+contaMonica.mostrarSaldo()
+
+
+
+// Crie uma classe chamada Aluno onde:
+// - A nota seja um atributo privado
+// - método definirNota (nota)
+// - método mostrarNota()
+
+
+class Aluno{
+
+    #nota
+    constructor(nota){
+        this.#nota = nota
+
+    }
+
+definirNota(novaNota){
+    if(novaNota >= 0 && novaNota <=10){
+    this.#nota = novaNota
+    }
+    else{
+        console.log("Valor inválido!")
+    }
+}
+
+mostrarNota(){
+    if (this.#nota >= 0 && this.#nota <=10){
+    console.log(`Sua nota  é de ${this.#nota}`)
+    }
+    else{
+        console.log("Nota não definida!")
+    }
+}
+
+}
+
+const notaMonica = new Aluno()
+notaMonica.definirNota(-2)
+notaMonica.mostrarNota()
+notaMonica.definirNota(5)
+notaMonica.mostrarNota()
