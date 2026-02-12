@@ -1,0 +1,40 @@
+*{ /*Zerar/padronizar todas as medidas de todo o código, forma de dar start do zero*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#topo_loja{     /*id do cabeçalho, para organizá-lo e aplicar as configurações a tudo nele */
+
+    background-color: #1c0a57;
+    color:#f1f9ff;
+    padding: 20px;    /* utilizado colocar a msm distancia em todos os lados do topo loja */
+    text-align: center;   /* utilizado para centralizar o texto no meio do cabeçalho */
+}
+
+#bt_menu, #label_menu{ /* desativa o botão sanduíche pq ele é para o celular e aqui estamso mexendo no desktop */
+    display:none;
+}
+
+#menu ul{ /* pega a tag q ta dentro do menu, que nesse caso é o ul ao colocar um na frente do outro */
+    list-style: none;/* tira as bolinhas da lista */
+    margin-top: 10px;/* dar espaço entre os itens da lista */
+}
+
+#menu li{
+    display: inline-block; /* colocar um do lado do outro como inline*/
+    margin: 0 10px; /* fica 0 em cima e embaixo e 10px de espaço no lado direito e esquerdo de cada item*/
+}
+
+#menu a{
+    color: #ff9900;
+    text-decoration: none; /*tira o sublinhado do link*/
+    font-weight: bold; /*deixa o texto mais espesso, grossinho*/
+}
+
+.titulo_secao{ /*chamando a class titulo_secao*/
+    text-align: center;
+    margin-top: 40; /*coloca margem na parte de cima do título*/
+    color: #1c0a57;
+}
