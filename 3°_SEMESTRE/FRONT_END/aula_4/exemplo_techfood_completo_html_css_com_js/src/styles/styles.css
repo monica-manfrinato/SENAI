@@ -1,0 +1,228 @@
+                                        /* VISUAL DOS CONTEÚDOS*/
+
+*{ /*Zerar/padronizar todas as medidas de todo o código, forma de dar start do zero*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff7f3;
+}
+
+h1{
+    color: #A5402D;
+}
+#topo_loja{     /*id do cabeçalho, para organizá-lo e aplicar as configurações a tudo nele */
+
+    background-color: #721121;
+    color:#fff7f3;
+    padding: 20px;    /* utilizado colocar a msm distancia em todos os lados do topo loja */
+    text-align: center;   /* utilizado para centralizar o texto no meio do cabeçalho */
+}
+
+#bt_menu, #label_menu{ /* desativa o botão sanduíche pq ele é para o celular e aqui estamso mexendo no desktop */
+    display:none;
+}
+
+#menu ul{ /* pega a tag q ta dentro do menu, que nesse caso é o ul ao colocar um na frente do outro */
+    list-style: none;/* tira as bolinhas da lista */
+    margin-top: 10px;/* dar espaço entre os itens da lista */
+}
+
+#menu li{
+    display: inline-block; /* colocar um do lado do outro como inline*/
+    margin: 0 10px; /* fica 0 em cima e embaixo e 10px de espaço no lado direito e esquerdo de cada item*/
+}
+
+#menu a{
+    color: #F15156;
+    text-decoration: none; /*tira o sublinhado do link*/
+    font-weight: bold; /*deixa o texto mais espesso, grossinho*/
+}
+
+#menu a:hover{
+    color: #FFC07F;
+}
+
+#menu a:focus{ outline: 2px solid #F15156 ; border-radius: 8px;}
+
+
+.titulo_secao{ /*chamando a class titulo_secao*/
+    text-align: center;
+    margin-top: 40; /*coloca margem na parte de cima do título*/
+    color: #A5402D;
+}
+
+
+/* ========================================================================================================================== */
+                                        /* ESTRUTURA INICIAL GRID (DESKTOP) */
+
+.vitrine_grid{  /* é o div que está englobando os cards, que vão ser organizados e estruturados pela grid a seguir */
+
+    display: grid;  /* define que a estrutura utilizada será o grid */
+    grid-template-columns: repeat(3,1fr) ;     /* definimos apenas as colunas, pois as linhas são criadas automaticamente caso não caiba na coluna, o conteúdo vai descendo */
+    /* o repeat vai definir: (quantidade de colunas, qual a fração da página que cada coluna vai ocupar) */
+    gap: 15px; /* define o espaço entre as colunas como 20px */
+    padding: 20px; /* define o espaço entre as colunas e as BORDAS como 20px */
+
+}
+
+
+
+                                        /* CONTEÚDO DENTRO DO GRID E CONTINUAÇÃO DO CONTEÚDO DE FORA */
+
+.card{ /* cada um dos cards de alimentos q estão dentro dos articles */
+border: 1.5px solid #721121; /* short hand - colocar todos os atributos em uma linha só */
+padding: 15px; /* espaço entre a borda e o conteúdo (imagem e texto) */
+border-radius: 5px; /* deixa a borda arredondada */
+text-align: center; /* alinha o texto no meio */
+}
+
+.card img { /* assim vai editar as imagens que estão dentro do card */
+
+    max-width: 100%; /* faz com que a imagem ocupe o espaço disponivel */
+    height: auto; /* height automático é para a autora se adaptar ao msm tamanho do width */
+    border-radius: 4px; /* arredonda o canto das imagens */
+}
+.preco{ /* tá em um spam, ent está como inline level */
+    display: block; /* deixa como block level */
+    color:#F15156;
+    font-weight: bold; /* deixa a linha um pouco mais grossa, espessa */
+    margin: 10px , 0;
+
+}
+
+.bt_pedido{
+    background-color: #721121;
+    color: #fff7f3;
+    border: none; /* tira a borda */
+    border-radius: 4px; /* deixa arredondado 4px */
+    padding: 8px;
+    width: 100; /* dependendo do tamanho da tela disponível ele vai se ajustando */
+    cursor: pointer; /* deixa o cursor como mãozinha quando passa por cima */
+    margin-top: 10px;
+
+}
+.bt_pedido:hover{
+    background-color: #FFC07F;
+    font-weight: bold;
+    color: #721121;
+}
+
+.bt_pedido:active{
+    background-color: #A5402D;
+    font-weight: bold;
+    color: #FFC07F;
+}
+
+.bt_pedido:focus{ outline: 3px solid #F15156 ; }
+
+
+#rodape{
+    background-color: #721121;
+    color: #721121;
+    padding: 30px; /* espaço entre o conteúdo e as bordas */
+    margin-top: 40px; /* deixa um epsacinho entre o rodape e o topo (cards de cima) para não se misturarem */
+    text-align: center;
+}
+
+
+
+/* ====================================================================================================================================== */
+                                                        /* MEDIA QUERIES */
+/* ====================================================================================================================================== */
+
+@media screen{ /* inicia o media  */
+
+    #topo_loja h1{
+        letter-spacing: 2px; /* edita o espaço entre as letras do h1 que está dentro do topo_loja */
+    }
+}
+
+@media only screen and (max-width: 480px){ /* apenas para telas e que tenham max-width de 480px */
+    h1{
+        font-size: 1.2rem; /* para fonte utilizamos o rem, que não perde proporção e é bom para aumentar e diminuir*/
+    }
+} 
+
+
+
+/* ====================================== TELA TABLET ====================================== */
+
+
+@media screen and (min-width:601px) and (max-width:1024px){
+    .vitrine_grid{
+        grid-template-columns: repeat(2,1fr); /* muda para 2 colunas*/
+    }
+}
+
+
+/* ====================================== TELA DISPOSITIVO MÓVEL ====================================== */
+
+@media screen and (max-width: 600px), (orientation: portrait){
+
+    /* Editando o menu hamburguer/retrátil/responsivo*/
+
+    #label_menu{
+        display: block; /*deixa sozinho e não inline*/
+        font-size: 2.5rem; /*É fonte pq é um símbolo e não uma imagem que colocamos*/
+        color: #F15156;
+        cursor: pointer;
+        margin-top: 10px;
+
+    }
+
+    #menu ul {
+        display: none;  /* tira o menu */
+
+    }
+    #bt_menu:checked ~ #menu ul { /*~ indica que são irmãos, estão no mesmo nível no html, e adicionando o ul entramos dentro do menu no ul para alterar esse elemento, se não tivesse o menu como irmão a ação não seria realizada, é como uma confirmação, checagem*/
+        display: block; /*deixa sozinho e não inline, para que possamos editar*/
+        padding: 10px 0; /*padding só em baixo e em cima, nas laterais é 0*/
+    }
+
+    .vitrine_grid{
+        grid-template-columns: 1fr; /* muda para 2 colunas*/
+    }
+
+    .desc{
+        display: none; /* deixa a descrição invisível para ficar mais clean, pq no celular parece q ta muita informação*/
+    }
+
+    #menu li {
+        display: block;
+        margin: 15px 0;
+        border-bottom: 1px solid #721121;
+        padding-bottom: 10px;
+    }
+
+
+}
+
+
+@media not screen{
+    #menu, .bt_pedido, #label_menu, #bt_menu{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================================================================================================================== */
+/* ====================================================================================================================================== */
+/* COISAS PARA MODIFICAR NO ESTILO:
+
+- Adicionar hover no 'massas e sobremesas' do cabeçalho - nav
+- Adicionar mudança de cor ao clicar nos botões e tb no nav
+- Adicionar mudançã de cor fixa para quando clicar no botão (ciclio mudou e ficou, como se ja tivesse tido acessado, igual o roxo no link azul)
+- Modificar os conteúdos e a temática do site 
+- Modificar a paleta de cores para a que está anexada no 'images' */
+/* ====================================================================================================================================== */
+/* ====================================================================================================================================== */

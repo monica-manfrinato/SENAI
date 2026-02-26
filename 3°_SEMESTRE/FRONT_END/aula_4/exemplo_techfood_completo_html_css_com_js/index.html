@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <title>TechFood exemplo - Grid + Media Query</title>
+</head>
+<body>
+
+    <header id="topo_loja">
+        <h1>TechFood - Sabor e Saber</h1>
+        <input type="checkbox" id="bt_menu">    <!--bt_menu é o nome q será dado ao checkbox  -->
+        <label for="bt_menu" id="label_menu">&#9776;</label>     <!-- com input sempre precisa ter label, que é o texto que acompanha, nesse caso vai ser o ícone sanduíche para o menu -->
+
+
+
+        <nav id="menu">
+            <ul>
+                <li><a href="#secao_massas">Massas</a> </li>     <!-- o <a></a> tras o link mesmo http... o <link> é utilizado para arquivos -->
+                <li><a href="#secao_sobremesas">Sobremessas</a> </li>    <!-- o <a></a> tras o link mesmo http... o <link> é utilizado para arquivos -->
+            </ul>
+        </nav>
+    </header>
+
+
+<main>
+    <!-- sections juntam seções que tem vínculo, o article são assuntos diferentes sem contexto com o resto da página -->
+    <section id="secao_massas" >
+        <h2 class="titulo_secao"> Nossas Massas </h2>          <!-- utilizamos h2 pq eo h1 já é cabeçalho geral da página -->
+        <div class="vitrine_grid">
+            <article class="card">
+                <img src="src/images/lasanha.jpg" alt="Lasanha bolonhesa sobre um prato branco com um pouco de cheiro verde por cima">
+                <h3>Lasanha Bolonhesa</h3>
+                <p class="desc"> Lasanha artesanal com molho produzido na casa da Lets</p>  <!-- desc significa descrição -->
+                <span class="preco">R$ 45,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <button class="bt_pedido">Pedir agora</button>
+            </article>
+
+
+            <article class="card">
+                <img src="src/images/ravioli.jpg" alt="Prato de ravioli ao molho vermelho">
+                <h3>Ravioli de carne</h3>
+                <p class="desc"> Ravioles feitos na casa da lets pelo chef Rosalvo com ingredientes locais </p>  <!-- desc significa descrição -->
+                <span class="preco">R$ 30,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <button class="bt_pedido">Pedir agora</button>
+            </article>
+
+            <article class="card">
+                <img src="src/images/nhoque.jpg" alt="Prato de nhoque ao molho bolonhesa com queijo ralado">
+                <h3>Nhoque à bolonhesa</h3>
+                <p class="desc"> Nhoques produzidos com ingredientes importados diretamente da Itália, garantindo mais sabor à receita </p>  <!-- desc significa descrição -->
+                <span class="preco">R$ 50,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <button class="bt_pedido">Pedir agora</button>
+            </article>
+        </div>
+    </section>
+
+
+    <section id="secao_sobremesas" >
+        <h2 class="titulo_secao"> Nossas Sobremesas </h2>        <!-- utilizamos h2 pq eo h1 já é cabeçalho geral da página -->
+        <div class="vitrine_grid">
+            <article class="card">
+                <img src="src/images/brigadeiro.jpg" alt="Brigadeiros de chocolate empilhados em um prato ">
+                <h3>Brigadeiro de chocolate</h3>
+                <p class="desc"> Brigadeiro feito com muito amor pela confeiteira Letícia Roberta com ingredientes locais</p>  <!-- desc significa descrição -->
+                <span class="preco">R$ 5,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <button class="bt_pedido">Pedir agora</button>
+            </article>
+
+
+            <article class="card">
+                <img src="src/images/canolli.jpg" alt="Canolli recehado com  chocolate e creme branco sobre uma tábua">
+                <h3>Canolli recheado </h3>
+                <p class="desc"> O canolli tem diversas variedades de recheio, e com a massa crocante é a sobremesa perfeita para qualquer momento </p>  <!-- desc significa descrição -->
+                <span class="preco">R$ 12,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <button class="bt_pedido">Pedir agora</button>
+            </article>
+
+            <article class="card">
+                <img src="src/images/palha_italiana_leite_ninho.jpg" alt="Prato com uma pilha de palhas italianas de leite ninho">
+                <h3>Palha italiana diet de leite ninho </h3>
+                <p class="desc"> Palha italiana saborosa e diet, perfeita para sua vontade de doce sem sair da dieta! </p>  <!-- desc significa descrição -->
+                <span class="preco">R$ 10,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <button class="bt_pedido">Pedir agora</button>
+            </article>
+        </div>
+    </section>
+
+</main>
+
+
+<footer id="rodape">
+    <div class="info-footer">
+        <p><strong>TechFood 2026 &#169;</strong></p>       <!-- strong é utiliza para deixar em negrito -->
+        <p>Rua das pitanguinhas 222  - Jardim das amoras - Acerolândia</p>
+    </div>
+</footer>
+
+
+
+<script src="src/scripts/aula_4.js"></script> <!-- conecta essa página html ao script com código java script -->
+</body>
+</html>
