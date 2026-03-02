@@ -5,6 +5,7 @@
 import { View, Text, StyleSheet } from "react-native";
 
 export default function Scaffold() {
+
   return (
     <View style={styles.container}> 
       <Text style={styles.titulo}></Text>
