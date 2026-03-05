@@ -30,7 +30,7 @@
 
 // const valorCompra = prompt ("Insiria o valor da compra:")
 // const cupomDesconto = prompt("Você possuí cupom de desconto? (Digite sim ou nao)")
-// if (valorCompra > 150 || cupomDesconto.toLocaleLowerCase() == 'sim'){
+// if (valorCompra > 150 || cupomDesconto.toLocaleLowerCase().trim == 'sim'){
 //     console.log("Frete grátis liberado")
 // }
 // else{
@@ -39,10 +39,10 @@
 
 // Exercício 4: 
 
-// const numUsuario = prompt("Insira um número aletório:")
+// const numUsuario = prompt("Insira um número aletório de 1 à 10:")
 // const numSorteado = Math.floor(Math.random()*10)+1
 
-// if (numUsuario == numSorteado){
+// if (numUsuario === numSorteado){
 //     alert("Parabéns! Você ganhou um brinde!")
 // }
 // else{
@@ -68,7 +68,7 @@
 // const modelo = prompt("Insira o modelo do veículo:")
 // const marca = prompt("Insira a marca do veículo:")
 // const ano = prompt("Insira o ano do veículo:")
-// const anoAtual = prompt("Isiria o ano atual")
+// const anoAtual = getFullYear()
 
 // const carro = new Veiculo (modelo, marca, ano)
 

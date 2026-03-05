@@ -1,4 +1,4 @@
-const mysql = require('mysql2')
+const mysql = require('mysql2') //mysql2 é focado em funções de callback que chamam funções de callback
 
 require('dotenv').config()
 
@@ -9,8 +9,8 @@ const pool = mysql.createPool({
     host: process.env.DB_HOST, 
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    databse: process.env.DB_NAME,
-    porta: process.env.DB_PORT,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT,
     waitForConnections: true,
     connectionLimit: 10, //limite de quantidade de conexões
     queueLimit: 0 //deixa ilimitada a fila de espera pela conexão
@@ -20,3 +20,22 @@ const pool = mysql.createPool({
 
 module.exports = pool
 
+
+//MODELO PROFESSOR
+
+// const mysql = require('mysql2')
+
+// require('dotenv').config()
+
+// const pool = mysql.createPool({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+//     port: process.env.DB_PORT,
+//     waitForConnections: true,
+//     connectionLimit: 10,
+//     queueLimit: 0
+// })
+
+// module.exports = pool
