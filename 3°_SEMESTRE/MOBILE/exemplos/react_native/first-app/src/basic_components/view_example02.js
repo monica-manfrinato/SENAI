@@ -1,0 +1,67 @@
+import { View, Text, StyleSheet } from "react-native";
+
+export default function ViewExample02() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Justify Content</Text>
+      
+
+      <View style={styles.exemplo}>
+
+        <View style={{
+            flexDirection: "row", //nesse caso a linha é o principal, então o justifyContent controla esquerda e direita e o alignItems controla o subir ou descer
+            height: 300, 
+            width: 300, 
+            gap: 8, 
+            justifyContent: "center",
+            alignItems: "flex-end"
+            }}> 
+
+        <View style={styles.box}/>
+        <View style={styles.box}/>
+        <View style={styles.box}/>   
+        </View> 
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff0cd",
+  },
+  titulo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  subtitulo: {
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "#4285f4",
+    marginBottom: 8,
+  },
+  exemplo: {
+    width: "80%",
+    padding: 16,
+    marginBottom: 16,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+  },
+  box: {
+    width: 50,
+    height: 50,
+    backgroundColor: "#4285f4",
+    borderRadius: 4,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  textBox: {
+    color: "#fff",
+    fontSize: 12,
+    fontWeight: "bold",
+  },
+});
