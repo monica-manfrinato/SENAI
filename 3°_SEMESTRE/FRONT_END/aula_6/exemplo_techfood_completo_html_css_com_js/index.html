@@ -37,7 +37,13 @@
                 id="foto_destaque">
                 <h3>Lasanha Bolonhesa</h3>
                 <p class="desc"> Lasanha artesanal com molho produzido na casa da Lets</p>  <!-- desc significa descrição -->
-                <span class="preco">R$ 45,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
+
+                <div class = "quantidade"> 
+                    <label for=""></label> 
+                    <input type="number" id="qtd_lasanha" value="1" min="1">
+                </div>
+
+                <span class="preco" id = "preco_lasanha">R$ 45,00</span>    <!-- span é a versão inline level do <p>, ou seja só ocupa a parte necessária-->
 
                 <button class="bt_pedido">Pedir agora</button>
             </article>
@@ -109,6 +115,6 @@
 
 
 
-<script src="src/scripts/novo.js"></script> <!-- conecta essa página html ao script com código java script -->
+<script src="src/scripts/aula_6_eventos_dom.js"></script> <!-- conecta essa página html ao script com código java script -->
 </body>
 </html>
