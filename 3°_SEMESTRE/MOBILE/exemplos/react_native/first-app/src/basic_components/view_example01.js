@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export default function ViewExample01() {
+export default function ViewExample01() { //se chama componente funcional pq tem uma função inserida nele
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Flex Direction</Text>

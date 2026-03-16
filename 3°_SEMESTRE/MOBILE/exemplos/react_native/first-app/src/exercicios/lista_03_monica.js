@@ -17,6 +17,9 @@ const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       <View style={styles.card}>
         <Text style={styles.label}>Exercício 1 - Lista de frutas</Text>
         {frutas.map((fruta, index) => (<Text key = {index}> {index +1} - {fruta} </Text>))}
+        {/* o fruta representa 1 elemento da lista frutas, o nome precisa remeter a essa lista */}
+        {/* no map usamos uma callback dentro */}
+        {/* sempre q for trabalhar com uma lista, usar o index pq ela não tem identificador único */}
       </View>
 
 
