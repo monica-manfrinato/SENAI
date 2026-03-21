@@ -11,99 +11,83 @@
 import { StyleSheet, Text, View } from "react-native";
 
 export default function ExercicioView10() {
-  return <View style={styles.container}>
-<View style={{flex:1}}>
-    <View style={styles.header}></View>
-        <View style={styles.linhaCards}>
-            <View style={styles.redBox}></View>
-            <View style={styles.greenBox}></View>
-            <View style={styles.blueBox}></View>
-
-        </View>
-            <View style={styles.painel}>
-            <View style={styles.painelPrincipal}></View>
-            <View style={styles.painelLateral}></View>
-        </View>
-    <View style={styles.footer}></View>
-</View>
-    
-
-
-
-  </View>;
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}></View>
+      
+      <View style={styles.linhaCards}>
+        <View style={styles.redBox}></View>
+        <View style={styles.greenBox}></View>
+        <View style={styles.blueBox}></View>
+      </View>
+      
+      <View style={styles.painel}>
+        <View style={styles.painelPrincipal}></View>
+        <View style={styles.painelLateral}></View>
+      </View>
+      
+      <View style={styles.footer}></View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flexDirection:"row",
     flex: 1,
-    gap: 18,
-    padding:8,
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-  },
-
-
-  header:{
-    width:"100%",
-    height:50,
-    backgroundColor:"darkblue"
-  },
-
-  linhaCards:{
-    maxWidth:"100%",
+    flexDirection: "column",
+    padding: 8,
     gap: 8,
-    flexDirection:"row",
-
   },
 
-  painel:{
-    flex:1,
-    flexDirection: "row"
+  header: {
+    width: "100%",
+    height: 50,
+    backgroundColor: "darkblue",
   },
-  painelPrincipal:{
-    flex: 2,
-    backgroundColor:"pink",
+
+  linhaCards: {
+    width: "100%",
     flexDirection: "row",
     gap: 8,
-  },
-
-  painelLateral:{
-    flex:1,
-    backgroundColor:"blue",
-    flexDirection: "row"
-
-  },
-
-  footer:{
-    height:40,
-    width:"100%",
-    backgroundColor:"darkblue"
-
+    padding: 8,
   },
 
   redBox: {
+    flex: 1,
     height: 80,
-    width: 80,
-
     backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
   },
   greenBox: {
+    flex: 1,
     height: 80,
-    width: 80,
     backgroundColor: "green",
-    alignItems: "center",
-    justifyContent: "center",
   },
   blueBox: {
+    flex: 1,
     height: 80,
-    width: 80,
     backgroundColor: "blue",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+
+  painel: {
+    flex: 1,
+    flexDirection: "row",
+    gap: 8,
+    padding: 8,
+  },
+
+  painelPrincipal: {
+    flex: 2,
+    backgroundColor: "pink",
+  },
+
+  painelLateral: {
+    flex: 1,
+    backgroundColor: "blue",
+  },
+
+  footer: {
+    width: "100%",
+    height: 40,
+    backgroundColor: "darkblue",
   },
 });
