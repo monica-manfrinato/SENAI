@@ -8,7 +8,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function ExercicioView09() {
   return <View style={styles.container}>
 
-    <View style={styles.semaforo}>
+    <View style={styles.semaforo}> {/* container pai do semáforo, engloba as luzes */}
         <View style={styles.luzVerde}></View>
         <View style={styles.luzAmarela}></View>
         <View style={styles.luzVermelha}></View>
@@ -20,8 +20,8 @@ export default function ExercicioView09() {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "center", // alinha a caixa do semáforo no centro da tela (no eixo transversal), pois ela é filha desse container
+    justifyContent: "center", // alinha a caixa do semáforo no centro da tela (no eixo principal)
     flex: 1,
     // gap: 18,
   },
@@ -33,10 +33,10 @@ const styles = StyleSheet.create({
   semaforo:{
     height: 320,
     width: 140,
-    borderRadius: 10,
+    borderRadius: 10, //aredondamento das quinas
     backgroundColor: "black",
-    justifyContent: 'space-evenly',
-    alignItems: 'center'
+    justifyContent: 'space-evenly', //coloca espaços iguais entre as luzes, q são seus filhos
+    alignItems: 'center' //alinha as luzes no centro do semáforo 
 
   },
   luzVermelha: {
