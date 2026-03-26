@@ -1,0 +1,87 @@
+Microcontrolador: tem tudo: memória de armazenamento, temporária e processador
+Micro processador: Tem as partes separadas, o microprocessador SÓ TEM O PROCESSADOR, OS OUTROS PRECISAM SER ADICIONADOS DE FORMA EXTERNA
+
+Raspbery  Pi pico
+3 partes:
+
+Processamento: Cérebro
+Comunicação: comunicação via micro USB (wifi e bluetooth)
+Fonte de alimentação: pilhas, tomada ou pc (usa o computador como fonte de alimentação)
+
+WIFI - Alta velocidade e boa comunicação, mas consome muita bateria
+Bluetooth BLE - Distância limitada e consome pouca bateria
+LoRaWAN - Longas distâncias, consumo baixo comunicação limitada
+
+- VER QUAIL TIPO DE ALIMENTAÇÃO É MELHOR PARA CADA SITUAÇÃO
+
+BIBLIOTECAS MAIS IMPORTANTES:
+
+machine: para utilizar todas as portas do micropython
+
+-GPIO: todas as portas digitais (comandos Pin, IN e OUT)
+
+- ADC: Portas 26, 27, 28
+
+- PWM: Controla por pulsos que oscilam, controlando a frequência (
+'from machine import COMANDOS Q QUISER DESSA BIBLIOTECA'
+ex: 'from machine import Pin
+
+
+
+utime: para controlar as esperas, o tempo, delay
+ - sleep: esperar leituras, manter um leed ligado
+ - sleep_ms: espera em milissegundos
+ - sleep_um: espera em microssegundos
+
+
+
+SENSORES E ATUADORES:
+
+Atuadores: executam uma ação física, baseado em um comando eletrônico (motor, led, display)
+LED:
+	ANODO - POSITIVO
+	NEGATIVO - NEGATIVO
+RGB: O nosso físico tem o catodo comum
+
+- Anodo comum:Perna maior é positiva (a esquerda do maior é vermelho, e os outros segue o padrão R - G - B pulando o maior)
+
+- Catodo comum: Perna maior é negativa (liga no GND) (a esquerda do maior é vermelho, e os outros segue o padrão R - G - B pulando o maior)
+
+
+Sensores: capta informações do ambiente físico e transforma em sinais elétricos
+
+
+Push botton: o resistor utilizado com ele é o  10K (marrom, preto, laranja, dourado)
+
+Pull up: quando o botão for clicado, aparece 0 
+Ligação física: tem 2 linhas, em uma das perninhas de 1 elas coloca o resistor e na outra perninha (do outro lado) liga no 3.3v. Na mesma linha dessa ligação (em qualquer um dos lados) conecta à porta digital. Na outra linha, liga uma das pontinhas ao GND e a outra fica vazia)
+
+
+Pull down: quando o botão for clicado, aparece 1
+Ligação física: tem 2 linhas, em uma das perninhas de 1 elas coloca o resistor e na outra perninha (do outro lado) liga no GND. Na mesma linha dessa ligação (em qualquer um dos lados) conecta à porta digital. Na outra linha, liga uma das pontinhas ao 3.3V e a outra fica vazia)
+
+
+POTENCIÔMETRO:ADC sempre está no meio, se inverter a ordem, a leitura será invertida
+
+PORTAS: DA ESQUERDA PARA A DIREITA
+
+GND ADC 3V3(VCC)
+
+
+RESISTORES:
+
+4 FAIXAS:
+
+1° e 2° faixa: concatena
+3° faixa: multiplica pelo valor da cor
+4° faixa: tolerância do resistor (valor acima ou abaixo q ele suporta além do valor resultante)
+
+
+
+
+
+
+
+
+
+

@@ -11,6 +11,7 @@
 import { StyleSheet, Text, View } from "react-native";
 
 export default function ExercicioView10() {
+<<<<<<< Updated upstream
   return (
     // A ordem que aparece aqui vai ser a ordem de posicionamento na tela, ou seja, primeiro o header, depois a linha dos cards, depois o painel e por último o footer, e como o container principal tem flexDirection 'column', os elementos vão se organizar em coluna, um abaixo do outro
 
@@ -31,14 +32,46 @@ export default function ExercicioView10() {
       <View style={styles.footer}></View>
     </View>
   );
+=======
+  return <View style={styles.container}>
+    <View style={styles.header}></View>
+        <View style={styles.linhaCards}>
+            <View style={styles.redBox}><Text style = {styles.textStyle}>Caixa Vermelha</Text></View>
+            <View style={styles.greenBox}><Text style = {styles.textStyle}>Caixa Verde</Text></View>
+            <View style={styles.blueBox}><Text style = {styles.textStyle}>Caixa Azul</Text></View>
+        </View>
+
+            <View style={styles.painel}>
+            <View style={styles.painelPrincipal}></View>
+            <View style={styles.painelLateral}></View>
+        </View>
+    <View style={styles.footer}></View>
+
+    
+
+
+
+  </View>;
+>>>>>>> Stashed changes
 }
 
 const styles = StyleSheet.create({ // no container principal, definimos flexDirection 'column' para organizar os elementos em coluna
   container: {
+<<<<<<< Updated upstream
     flex: 1, // para ocupar toda a tela
     flexDirection: "column",
     padding: 8, //espaço interno em todas as seções
     gap: 8, // espaço entre os elementos filhos (header, linhaCards, painel, footer)
+=======
+    flexDirection:"column",
+    flex: 1,
+    gap: 8,
+    padding:8,
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+>>>>>>> Stashed changes
   },
 
   header: {
@@ -47,6 +80,7 @@ const styles = StyleSheet.create({ // no container principal, definimos flexDire
     backgroundColor: "darkblue",
   },
 
+<<<<<<< Updated upstream
   linhaCards: { //como não tem altura fixa definida, ele vai se ajustar ao conteúdo dos cards (redBox, greenBox, blueBox)
     width: "100%", // para ocupar toda a largura, já q o pai está com flexDirection 'column'
     flexDirection: "row", //modifica o flexDirection para organizar os seus filhos (redBox, greenBox, blueBox) em linha
@@ -57,16 +91,60 @@ const styles = StyleSheet.create({ // no container principal, definimos flexDire
   redBox: {
     flex: 1, //vai dividir o espaço disponível igualmente entre os 3 cards, já que cada um tem flex: 1
     height: 80, //define uma altura fixa para os cards
+=======
+  linhaCards:{
+    flexDirection:"row",
+    gap: 8,
+    padding:4,
+    justifyContent:"space-between"
+  },
+
+  painel:{
+    flex:1,
+    flexDirection: "row",
+    gap:8
+  },
+
+  painelPrincipal:{
+    flex: 2,
+    backgroundColor:"pink",
+  },
+
+  painelLateral:{
+    flex:1,
+    backgroundColor:"blue",
+  },
+
+  footer:{
+    height:40,
+    width:"100%",
+    backgroundColor:"darkblue"
+
+  },
+    redBox: {
+    height: 80,
+    flex: 1,
+>>>>>>> Stashed changes
     backgroundColor: "red",
   },
+
   greenBox: {
     flex: 1,
     height: 80,
+<<<<<<< Updated upstream
+=======
+    flex: 1,
+>>>>>>> Stashed changes
     backgroundColor: "green",
   },
+
   blueBox: {
     flex: 1,
     height: 80,
+<<<<<<< Updated upstream
+=======
+    flex: 1,
+>>>>>>> Stashed changes
     backgroundColor: "blue",
   },
 

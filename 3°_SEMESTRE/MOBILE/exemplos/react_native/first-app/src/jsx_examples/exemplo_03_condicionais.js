@@ -8,6 +8,7 @@ export default function Exemplo03() {
 
     const logado = true
     const temNotificacoes = false
+    const estoque = 0;
 
   return (
     <View style={styles.container}>
@@ -24,7 +25,10 @@ export default function Exemplo03() {
             { !temNotificacoes && <Text> Você não tem novas notificações </Text>}
 
         </View>
+          <Text style={styles.exemplo}> Estoque: {estoque == 0 ? "Produto Indisponível" : "null"} </Text>
+        <View>
 
+        </View>
     </View>
   );
 }
